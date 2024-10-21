@@ -877,9 +877,9 @@ RectTransform:
   - {fileID: 1096749707}
   m_Father: {fileID: 1103592121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 900, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74793804
@@ -3360,6 +3360,7 @@ GameObject:
   - component: {fileID: 158583882}
   - component: {fileID: 158583884}
   - component: {fileID: 158583883}
+  - component: {fileID: 158583885}
   m_Layer: 5
   m_Name: LumberNPC (Panel)
   m_TagString: Untagged
@@ -3428,6 +3429,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158583881}
   m_CullTransparentMesh: 1
+--- !u!114 &158583885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158583881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9006d3dbde69f3244bab104325cb01c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 158583881}
 --- !u!1 &159354491
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,9 +4842,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 194633438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235059497
@@ -4957,6 +4971,7 @@ GameObject:
   - component: {fileID: 256948407}
   - component: {fileID: 256948409}
   - component: {fileID: 256948408}
+  - component: {fileID: 256948410}
   m_Layer: 5
   m_Name: Inventory (Panel)
   m_TagString: Untagged
@@ -5025,6 +5040,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256948406}
   m_CullTransparentMesh: 1
+--- !u!114 &256948410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256948406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058ab3d7ee447c24282b8cd0d94c2081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 256948406}
 --- !u!1 &257702716
 GameObject:
   m_ObjectHideFlags: 0
@@ -5107,7 +5135,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 257702719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 880993070}
+        m_TargetAssemblyTypeName: BasicPanelControl, Assembly-CSharp
+        m_MethodName: OnHorseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &257702719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5536,7 +5576,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 278609049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 880993070}
+        m_TargetAssemblyTypeName: BasicPanelControl, Assembly-CSharp
+        m_MethodName: OnInventoryBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &278609049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6363,7 +6415,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 312206661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1548178335}
+        m_TargetAssemblyTypeName: MiningNPCControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &312206661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7859,9 +7923,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 194633438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377557291
@@ -8118,7 +8182,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 386199778}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1723043541}
+        m_TargetAssemblyTypeName: DoctorNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &386199778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9335,9 +9411,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 194633438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 900, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449862017
@@ -11022,9 +11098,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 194633438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1100, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534125790
@@ -11099,9 +11175,9 @@ RectTransform:
   - {fileID: 1026589607}
   m_Father: {fileID: 1103592121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534984097
@@ -12602,7 +12678,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 608926160}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 256948410}
+        m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &608926160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14221,9 +14309,9 @@ RectTransform:
   - {fileID: 146072609}
   m_Father: {fileID: 1103592121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 700, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679496434
@@ -18198,13 +18286,14 @@ GameObject:
   - component: {fileID: 880993067}
   - component: {fileID: 880993069}
   - component: {fileID: 880993068}
+  - component: {fileID: 880993070}
   m_Layer: 5
   m_Name: BasicPanel (Panel)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &880993067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18274,6 +18363,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880993066}
   m_CullTransparentMesh: 1
+--- !u!114 &880993070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880993066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799d1e6eeb494724e94a786f07ab73a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 256948406}
+  horsePanel: {fileID: 2120907614}
+  settingsPanel: {fileID: 2027655509}
 --- !u!1 &881404361
 GameObject:
   m_ObjectHideFlags: 0
@@ -19346,9 +19450,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 194633438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966707772
@@ -19678,9 +19782,9 @@ RectTransform:
   - {fileID: 269082222}
   m_Father: {fileID: 1103592121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989122904
@@ -20928,9 +21032,9 @@ RectTransform:
   - {fileID: 301123113}
   m_Father: {fileID: 1103592121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1060350033
@@ -23791,7 +23895,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1192055711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1885113696}
+        m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1192055711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24112,6 +24228,7 @@ GameObject:
   - component: {fileID: 1209294848}
   - component: {fileID: 1209294850}
   - component: {fileID: 1209294849}
+  - component: {fileID: 1209294851}
   m_Layer: 5
   m_Name: BarmenNPC (Panel)
   m_TagString: Untagged
@@ -24180,6 +24297,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209294847}
   m_CullTransparentMesh: 1
+--- !u!114 &1209294851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209294847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997e60e28e104284e8793aed2f8d1b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 1209294847}
 --- !u!1 &1218987142
 GameObject:
   m_ObjectHideFlags: 0
@@ -25980,7 +26110,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1321595502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 158583885}
+        m_TargetAssemblyTypeName: LumberNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1321595502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30107,9 +30249,9 @@ RectTransform:
   - {fileID: 1142495887}
   m_Father: {fileID: 1103592121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1100, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1519342463
@@ -31116,6 +31258,7 @@ GameObject:
   - component: {fileID: 1548178332}
   - component: {fileID: 1548178334}
   - component: {fileID: 1548178333}
+  - component: {fileID: 1548178335}
   m_Layer: 5
   m_Name: MiningNPC (Panel)
   m_TagString: Untagged
@@ -31184,6 +31327,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548178331}
   m_CullTransparentMesh: 1
+--- !u!114 &1548178335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548178331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a34a98230ac9c742ab9b4c579e93f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 1548178331}
 --- !u!1 &1548501828
 GameObject:
   m_ObjectHideFlags: 0
@@ -31196,6 +31352,7 @@ GameObject:
   - component: {fileID: 1548501831}
   - component: {fileID: 1548501830}
   - component: {fileID: 1548501829}
+  - component: {fileID: 1548501833}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -31298,6 +31455,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1548501833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548501828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6efeeae9bbac1740a92c84fbebdf97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quickItemPanel: {fileID: 769026166}
 --- !u!1 &1548804843
 GameObject:
   m_ObjectHideFlags: 0
@@ -31668,7 +31838,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1578733597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2027655513}
+        m_TargetAssemblyTypeName: SettingsPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1578733597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34407,9 +34589,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 194633438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 700, y: -80}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717332036
@@ -34461,6 +34643,7 @@ GameObject:
   - component: {fileID: 1723043538}
   - component: {fileID: 1723043540}
   - component: {fileID: 1723043539}
+  - component: {fileID: 1723043541}
   m_Layer: 5
   m_Name: DoctorNPC (Panel)
   m_TagString: Untagged
@@ -34529,6 +34712,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723043537}
   m_CullTransparentMesh: 1
+--- !u!114 &1723043541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723043537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce294ce5bdbc94c4d97a076c01fb90ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 1723043537}
 --- !u!1 &1724116952
 GameObject:
   m_ObjectHideFlags: 0
@@ -35630,7 +35826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1784752915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 880993070}
+        m_TargetAssemblyTypeName: BasicPanelControl, Assembly-CSharp
+        m_MethodName: OnSettingsBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1784752915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36517,7 +36725,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1835179216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1915958528}
+        m_TargetAssemblyTypeName: SpawnMenu, Assembly-CSharp
+        m_MethodName: OnSpawnBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1835179216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37360,7 +37580,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1882646101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209294851}
+        m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1882646101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37410,6 +37642,7 @@ GameObject:
   - component: {fileID: 1885113693}
   - component: {fileID: 1885113695}
   - component: {fileID: 1885113694}
+  - component: {fileID: 1885113696}
   m_Layer: 5
   m_Name: GunsmithNPC (Panel)
   m_TagString: Untagged
@@ -37478,6 +37711,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885113692}
   m_CullTransparentMesh: 1
+--- !u!114 &1885113696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885113692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd12f122bdc0a140a7da3d83ec18544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 1885113692}
 --- !u!1 &1887899608
 GameObject:
   m_ObjectHideFlags: 0
@@ -38232,13 +38478,14 @@ GameObject:
   - component: {fileID: 1915958525}
   - component: {fileID: 1915958527}
   - component: {fileID: 1915958526}
+  - component: {fileID: 1915958528}
   m_Layer: 5
   m_Name: SpawnMenu (Panel)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1915958525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38304,6 +38551,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915958524}
   m_CullTransparentMesh: 1
+--- !u!114 &1915958528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915958524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b408913ded27c544e85b5d3e02e2472c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPanel: {fileID: 1915958524}
+  basicPanel: {fileID: 880993066}
 --- !u!1 &1917481014
 GameObject:
   m_ObjectHideFlags: 0
@@ -41638,6 +41899,7 @@ GameObject:
   - component: {fileID: 2027655510}
   - component: {fileID: 2027655512}
   - component: {fileID: 2027655511}
+  - component: {fileID: 2027655513}
   m_Layer: 5
   m_Name: Settings (Panel)
   m_TagString: Untagged
@@ -41706,6 +41968,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027655509}
   m_CullTransparentMesh: 1
+--- !u!114 &2027655513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027655509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77acb0c731a141541a9c07488395ea19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsPanel: {fileID: 2027655509}
 --- !u!1 &2029889485
 GameObject:
   m_ObjectHideFlags: 0
@@ -42439,7 +42714,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2063320488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2120907618}
+        m_TargetAssemblyTypeName: HorsePanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2063320488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43202,6 +43489,7 @@ GameObject:
   - component: {fileID: 2120907615}
   - component: {fileID: 2120907617}
   - component: {fileID: 2120907616}
+  - component: {fileID: 2120907618}
   m_Layer: 5
   m_Name: Horse (Panel)
   m_TagString: Untagged
@@ -43272,6 +43560,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120907614}
   m_CullTransparentMesh: 1
+--- !u!114 &2120907618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120907614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e793a06eea0704588237a50d9dbaf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horsePanel: {fileID: 2120907614}
 --- !u!1 &2137043749
 GameObject:
   m_ObjectHideFlags: 0

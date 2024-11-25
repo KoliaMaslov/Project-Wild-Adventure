@@ -16,27 +16,8 @@ public class OreSpawnScript : MonoBehaviour
     void Start()
     {
         SpawnOre(orePrefab);
-/*        switch (currentOre)
-        {
-            case "Coal":
-                switchOre = "coal";
-                break;
-            case "Copper":
-                switchOre = "copper";
-                break;
-            case "Iron":
-                switchOre = "iron";
-                break;
-            case "Sandstone":
-                switchOre = "sandstone";
-                break;
-            case "Silver":
-                switchOre = "silver";
-                break;
-            case "Gold":
-                switchOre = "gold";
-                break;
-        }*/
+        inventory.inventoryPanel.SetActive(true);
+        inventory.inventoryPanel.SetActive(false);
     }
 
     void Update()

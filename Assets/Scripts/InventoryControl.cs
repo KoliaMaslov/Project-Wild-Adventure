@@ -25,8 +25,6 @@ public class InventoryControl : MonoBehaviour
 
     void Start()
     {
-//        images[0].sprite = pickaxe;
-//        images[1].sprite = axe;
         for (int c = 0; c < isOccupied.Length; c++) isOccupied[c] = false;
         AddItem("Pickaxe");
         AddItem("Axe");

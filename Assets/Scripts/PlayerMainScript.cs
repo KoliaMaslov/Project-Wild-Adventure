@@ -36,11 +36,11 @@ public class PlayerMainScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            TakePickaxe();
+            //TakePickaxe();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            TakeAxe();
+            //TakeAxe();
         }
         
     }
@@ -59,7 +59,7 @@ public class PlayerMainScript : MonoBehaviour
         isLocked = false;
     }
 
-    private void TakePickaxe()
+    public void TakePickaxe()
     {
         if (itemHolder)
         {
@@ -81,7 +81,7 @@ public class PlayerMainScript : MonoBehaviour
         }
     }
 
-    private void TakeAxe()
+    public void TakeAxe()
     {
         if (itemHolder)
         {

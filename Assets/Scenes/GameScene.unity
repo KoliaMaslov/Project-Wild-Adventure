@@ -2714,7 +2714,7 @@ GameObject:
   - component: {fileID: 132910860}
   - component: {fileID: 132910859}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: Button10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2786,7 +2786,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: EighthButton
+        m_MethodName: TenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3415,7 +3415,7 @@ GameObject:
   - component: {fileID: 143657550}
   - component: {fileID: 143657549}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: Button12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3487,7 +3487,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: NinthButton
+        m_MethodName: TwelvethButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7043,7 +7043,7 @@ Transform:
   m_GameObject: {fileID: 296674582}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 500.5, z: -4}
+  m_LocalPosition: {x: -13, y: 501, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7062,7 +7062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 296674583}
-  orePrefab: {fileID: 4489648678361186946, guid: 2c53226cc9dbaed4f967c4674304f381,
+  orePrefab: {fileID: 1270194402842285211, guid: 208bcb48fcc7f0f46be71f2881d20f8d,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -8365,7 +8365,7 @@ GameObject:
   - component: {fileID: 354509727}
   - component: {fileID: 354509726}
   m_Layer: 5
-  m_Name: Button (25)
+  m_Name: Button28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8437,7 +8437,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentySixthButton
+        m_MethodName: TwentyEighthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10153,7 +10153,7 @@ GameObject:
   - component: {fileID: 445832345}
   - component: {fileID: 445832344}
   m_Layer: 5
-  m_Name: Button (19)
+  m_Name: Button22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10225,7 +10225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentythButton
+        m_MethodName: TwentySecondButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12223,7 +12223,7 @@ GameObject:
   - component: {fileID: 544760225}
   - component: {fileID: 544760224}
   m_Layer: 5
-  m_Name: Button (23)
+  m_Name: Button23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12295,7 +12295,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentyFourthButton
+        m_MethodName: TwentyThirdButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12431,7 +12431,7 @@ GameObject:
   - component: {fileID: 546938450}
   - component: {fileID: 546938449}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Button6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12729,7 +12729,7 @@ Transform:
   m_GameObject: {fileID: 564858785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 500.5, z: 0}
+  m_LocalPosition: {x: -13, y: 501, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12748,7 +12748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 564858786}
-  orePrefab: {fileID: 2062014476864853054, guid: c0bf4b6d495738041ba4813b003ec250,
+  orePrefab: {fileID: 1342943893065726747, guid: 66c5bb7bb43574a4b9fd85d8940230fb,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -15817,7 +15817,7 @@ GameObject:
   - component: {fileID: 688601961}
   - component: {fileID: 688601960}
   m_Layer: 5
-  m_Name: Button (17)
+  m_Name: Button17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15889,7 +15889,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: EighteenthButton
+        m_MethodName: SeventeenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16862,7 +16862,7 @@ GameObject:
   - component: {fileID: 711881561}
   - component: {fileID: 711881560}
   m_Layer: 5
-  m_Name: Button (12)
+  m_Name: Button14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16934,7 +16934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: ThirteenthButton
+        m_MethodName: FourteenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20218,7 +20218,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 256948406}
   horsePanel: {fileID: 2120907614}
   settingsPanel: {fileID: 2027655509}
-  player: {fileID: 0}
+  player: {fileID: 8182362698136348467, guid: 7d6c0fa325c79d7448d0d3f2101511f4, type: 3}
   temp: {fileID: 0}
   equippedItems:
   - {fileID: 235059497}
@@ -20966,7 +20966,7 @@ GameObject:
   - component: {fileID: 952304994}
   - component: {fileID: 952304993}
   m_Layer: 5
-  m_Name: Button (22)
+  m_Name: Button21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21038,7 +21038,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentyThirdButton
+        m_MethodName: TwentyFirstButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21382,7 +21382,7 @@ Transform:
   m_GameObject: {fileID: 963860943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 500.5, z: 8}
+  m_LocalPosition: {x: -13, y: 501, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21401,7 +21401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 963860944}
-  orePrefab: {fileID: 8042926699389839179, guid: 52bc9c353c379a5418fbb9320d6b03a1,
+  orePrefab: {fileID: 7542293228123880050, guid: c1b14030c2a0cb24ea7cab97475e161b,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -21421,9 +21421,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 963860944}
-  orePrefab: {fileID: 8042926699389839179, guid: 52bc9c353c379a5418fbb9320d6b03a1,
+  orePrefab: {fileID: 7542293228123880050, guid: c1b14030c2a0cb24ea7cab97475e161b,
     type: 3}
-  ore: {fileID: 6279626229211617387, guid: 52bc9c353c379a5418fbb9320d6b03a1, type: 3}
+  ore: {fileID: 5195640074998832780, guid: c1b14030c2a0cb24ea7cab97475e161b, type: 3}
   hits: 0
 --- !u!65 &963860947
 BoxCollider:
@@ -21534,7 +21534,7 @@ GameObject:
   - component: {fileID: 976312564}
   - component: {fileID: 976312563}
   m_Layer: 5
-  m_Name: Button (11)
+  m_Name: Button11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21606,7 +21606,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwelvethButton
+        m_MethodName: EleventhButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21788,6 +21788,128 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980214352}
   m_CullTransparentMesh: 1
+--- !u!1001 &981425965
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1021034596772366858, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_Name
+      value: BuyerNPCModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794978574611549760, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1021034596772366858, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 981425968}
+    - targetCorrespondingSourceObject: {fileID: 1021034596772366858, guid: 7166087c57f18214f9cc1622ff2e3113,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 981425967}
+  m_SourcePrefab: {fileID: 100100000, guid: 7166087c57f18214f9cc1622ff2e3113, type: 3}
+--- !u!1 &981425966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1021034596772366858, guid: 7166087c57f18214f9cc1622ff2e3113,
+    type: 3}
+  m_PrefabInstance: {fileID: 981425965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &981425967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981425966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96be9306d7cb26e438f8dc6bdab4810e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 256948410}
+  interactText: {fileID: 450034732}
+  sellLootText: {fileID: 177299298}
+  moneyText: {fileID: 80915684}
+  money: 0
+--- !u!136 &981425968
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981425966}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &989122902
 GameObject:
   m_ObjectHideFlags: 0
@@ -21934,7 +22056,7 @@ GameObject:
   - component: {fileID: 1005201778}
   - component: {fileID: 1005201777}
   m_Layer: 5
-  m_Name: Button (16)
+  m_Name: Button15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22006,7 +22128,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: SeventeenthButton
+        m_MethodName: FifteenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22241,7 +22363,7 @@ GameObject:
   - component: {fileID: 1025305050}
   - component: {fileID: 1025305049}
   m_Layer: 5
-  m_Name: Button (14)
+  m_Name: Button18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22313,7 +22435,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: FifteenthButton
+        m_MethodName: EighteenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24199,7 +24321,7 @@ GameObject:
   - component: {fileID: 1119710959}
   - component: {fileID: 1119710958}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Button8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24271,7 +24393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: SeventhButton
+        m_MethodName: EighthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26284,7 +26406,7 @@ GameObject:
   - component: {fileID: 1202043051}
   - component: {fileID: 1202043050}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27630,7 +27752,7 @@ GameObject:
   - component: {fileID: 1269291542}
   - component: {fileID: 1269291541}
   m_Layer: 5
-  m_Name: Button (27)
+  m_Name: Button25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27702,7 +27824,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentyEighthButton
+        m_MethodName: TwentyFifthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31947,7 +32069,7 @@ Transform:
   m_GameObject: {fileID: 1471553782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 500.5, z: 8}
+  m_LocalPosition: {x: -9, y: 501, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31987,7 +32109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1471553783}
-  orePrefab: {fileID: 8042926699389839179, guid: 52bc9c353c379a5418fbb9320d6b03a1,
+  orePrefab: {fileID: 7542293228123880050, guid: c1b14030c2a0cb24ea7cab97475e161b,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -32007,7 +32129,7 @@ GameObject:
   - component: {fileID: 1481476004}
   - component: {fileID: 1481476003}
   m_Layer: 5
-  m_Name: Button (20)
+  m_Name: Button24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32079,7 +32201,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentyFirstButton
+        m_MethodName: TwentyFourthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33556,7 +33678,7 @@ GameObject:
   - component: {fileID: 1528650109}
   - component: {fileID: 1528650108}
   m_Layer: 5
-  m_Name: Button (13)
+  m_Name: Button16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33628,7 +33750,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: FourteenthButton
+        m_MethodName: SixtheenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33689,7 +33811,7 @@ GameObject:
   - component: {fileID: 1534471677}
   - component: {fileID: 1534471676}
   m_Layer: 5
-  m_Name: Button (28)
+  m_Name: Button27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33761,7 +33883,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentyNinthButton
+        m_MethodName: TwentySeventhButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35663,7 +35785,7 @@ Transform:
   m_GameObject: {fileID: 1603506558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 500.5, z: 4}
+  m_LocalPosition: {x: -13, y: 501, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35682,7 +35804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1603506559}
-  orePrefab: {fileID: 1368557176373037022, guid: 85112798ba60a8841b5c9ed37f042133,
+  orePrefab: {fileID: 6949947327209303161, guid: 41f2a32f1af117d46840b3abe22be09d,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -35778,7 +35900,7 @@ GameObject:
   - component: {fileID: 1608520391}
   - component: {fileID: 1608520390}
   m_Layer: 5
-  m_Name: Button (18)
+  m_Name: Button20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35850,7 +35972,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: NineteenthButton
+        m_MethodName: TwentythButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36867,7 +36989,7 @@ GameObject:
   - component: {fileID: 1655602228}
   - component: {fileID: 1655602227}
   m_Layer: 5
-  m_Name: Button (15)
+  m_Name: Button13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36939,7 +37061,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: SixtheenthButton
+        m_MethodName: ThirteenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38459,7 +38581,7 @@ GameObject:
   - component: {fileID: 1736116429}
   - component: {fileID: 1736116428}
   m_Layer: 5
-  m_Name: Button (10)
+  m_Name: Button9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38531,7 +38653,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TenthButton
+        m_MethodName: NinthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40389,7 +40511,7 @@ GameObject:
   - component: {fileID: 1825355027}
   - component: {fileID: 1825355026}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Button4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41269,7 +41391,7 @@ Transform:
   m_GameObject: {fileID: 1869115346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 500.5, z: -8}
+  m_LocalPosition: {x: -13, y: 501, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41288,7 +41410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1869115347}
-  orePrefab: {fileID: 2704605505748004343, guid: 574c3c9b0810c5f438b9e6cb12cf23b3,
+  orePrefab: {fileID: 177466980226506250, guid: 07409a80d1f8d284fa95447005f3fc61,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -41807,7 +41929,7 @@ GameObject:
   - component: {fileID: 1887899611}
   - component: {fileID: 1887899610}
   m_Layer: 5
-  m_Name: Button (29)
+  m_Name: Button29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41879,7 +42001,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: ThirtiethButton
+        m_MethodName: TwentyNinthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41977,7 +42099,7 @@ GameObject:
   - component: {fileID: 1889557976}
   - component: {fileID: 1889557975}
   m_Layer: 5
-  m_Name: Button (24)
+  m_Name: Button26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42049,7 +42171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentyFifthButton
+        m_MethodName: TwentySixthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42319,7 +42441,7 @@ GameObject:
   - component: {fileID: 1910628391}
   - component: {fileID: 1910628390}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Button5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42671,7 +42793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPanel: {fileID: 1915958524}
   basicPanel: {fileID: 880993066}
-  playerPrefab: {fileID: 2403736853681950853, guid: 2e24020af4ab1e14e8576ec014bc40cf,
+  playerPrefab: {fileID: 7675776142550825914, guid: 7d6c0fa325c79d7448d0d3f2101511f4,
     type: 3}
   isSpawned: 0
   spawnPosition: {x: 0, y: 501, z: -10}
@@ -43043,7 +43165,7 @@ Transform:
   m_GameObject: {fileID: 1932097078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 500.5, z: -12}
+  m_LocalPosition: {x: -13, y: 501, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43062,7 +43184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1932097079}
-  orePrefab: {fileID: 6827850739903662001, guid: 4438f2252328eca4a86cba641e2fda43,
+  orePrefab: {fileID: 1063228012727564446, guid: 436a37710033d6049baca8dc109593fc,
     type: 3}
   inventory: {fileID: 256948410}
   ore: {fileID: 0}
@@ -44398,7 +44520,7 @@ GameObject:
   - component: {fileID: 1975216162}
   - component: {fileID: 1975216161}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44780,7 +44902,7 @@ GameObject:
   - component: {fileID: 1977165453}
   - component: {fileID: 1977165452}
   m_Layer: 5
-  m_Name: Button (21)
+  m_Name: Button19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44852,7 +44974,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentySecondButton
+        m_MethodName: NineteenthButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45331,7 +45453,7 @@ GameObject:
   - component: {fileID: 1999477339}
   - component: {fileID: 1999477338}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: Button7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45403,7 +45525,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TenthButton
+        m_MethodName: SeventhButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45576,7 +45698,7 @@ GameObject:
   - component: {fileID: 2004037823}
   - component: {fileID: 2004037822}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47318,7 +47440,7 @@ GameObject:
   - component: {fileID: 2086656903}
   - component: {fileID: 2086656902}
   m_Layer: 5
-  m_Name: Button (26)
+  m_Name: Button30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47390,7 +47512,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256948410}
         m_TargetAssemblyTypeName: InventoryControl, Assembly-CSharp
-        m_MethodName: TwentySeventhButton
+        m_MethodName: ThirtiethButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48738,3 +48860,4 @@ SceneRoots:
   - {fileID: 1795675455}
   - {fileID: 1469769004}
   - {fileID: 692978824}
+  - {fileID: 981425965}

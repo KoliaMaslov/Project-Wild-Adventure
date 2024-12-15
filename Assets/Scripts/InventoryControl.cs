@@ -356,7 +356,6 @@ public class InventoryControl : MonoBehaviour
         {
             int i = 0;
             while (i < basicPanel.equippedItemType.Length && basicPanel.equippedItemType[i] != itemsType[chosenItem]) i++;
-//            canBeEquipped[chosenItem] = true;
             isItemEquipped[chosenItem] = false;
             basicPanel.equippedItems[i].sprite = empty;
             basicPanel.isCellOccupied[i] = false;

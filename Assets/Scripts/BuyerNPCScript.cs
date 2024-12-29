@@ -1,30 +1,33 @@
 using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
 
 public class BuyerNPCScript : MonoBehaviour
 {
+    [SerializeField] private BasicPanelControl basicPanel;
     [SerializeField] private InventoryControl inventory;
     [SerializeField] private GameObject interactText;
     [SerializeField] private GameObject sellLootText;
-    public TextMeshProUGUI moneyText;
-    public int money;
     private bool isInTrigger = false;
     void Start()
     {
-        money = 1000;
-        moneyText.text = "Money: " + money.ToString();
+        if (basicPanel != null)
+        {
+            Debug.Log(basicPanel.money);
+/*            basicPanel.money += 20;
+            basicPanel.moneyText.text = "Money: " + basicPanel.money.ToString();
+            Debug.Log(basicPanel.money);
+            Debug.Log(basicPanel.moneyText.text);*/
+        }
     }
 
 
     void Update()
     {
-        if (isInTrigger)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                /*Debug.Log("Sell Loot");
-                for (int i = 0; i < inventory.lootPositionInArray.Length; i++)
+                Debug.Log("Sell Loot");
+                /*for (int i = 0; i < inventory.lootPositionInArray.Length; i++)
                 {
                     for (int j = 0; j < 5; j++)
                     {
@@ -38,33 +41,33 @@ public class BuyerNPCScript : MonoBehaviour
                     {
                         case "Coal":
                             inventory.DeleteItemInInventory(i);
-                            money += 20;
+                            basicPanel.money += 20;
                             break;
                         case "Copper":
                             inventory.DeleteItemInInventory(i);
-                            money += 40;
+                            basicPanel.money += 40;
                             break;
                         case "Iron":
                             inventory.DeleteItemInInventory(i);
-                            money += 80;
+                            basicPanel.money += 80;
                             break;
                         case "Sandstone":
                             inventory.DeleteItemInInventory(i);
-                            money += 60;
+                            basicPanel.money += 60;
                             break;
                         case "Silver":
                             inventory.DeleteItemInInventory(i);
-                            money += 120;
+                            basicPanel.money += 120;
                             break;
                         case "Gold":
                             inventory.DeleteItemInInventory(i);
-                            money += 200;
+                            basicPanel.money += 200;
                             break;
                         default:
                             break;
                     }
                 }
-                moneyText.text = "Money: " + money.ToString();
+                basicPanel.moneyText.text = "Money: " + basicPanel.money.ToString();
             }
         }
     }

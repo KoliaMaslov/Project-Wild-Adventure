@@ -21,7 +21,7 @@ namespace TTT
 		{
 			if(terrain==null || waterPlane==null) return;
 
-			Undo.RecordObject(terrain.terrainData, "Clear below water level");
+			Undo.RecordObject(terrain.terrainData, "Clear below water level"); // warning, very slow!
 
 			// remove trees
 			ArrayList NewTrees = new ArrayList(terrain.terrainData.treeInstances);
@@ -58,9 +58,9 @@ namespace TTT
 						if (currentPosHeight<0)
 						{
 							grass[x,y]=0;
-						}else{ // 
-							// NOTE: keeps original, ONLY for first run, because if its set to 0, cannot restore it..
-							grass[x,y]=2; // for test only
+						//}else{ // 
+						//	// NOTE: keeps original, ONLY for first run, because if its set to 0, cannot restore it..
+						//	grass[x,y]=2; // for test only
 						}
 					}
 				}

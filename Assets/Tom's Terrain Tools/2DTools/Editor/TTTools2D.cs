@@ -13,7 +13,7 @@ namespace TTT
 		//public Object heightMap;
 		private Texture2D sourceSplatMap;
 
-		private int edgeColliderResolution = 16; // 1 = 1 pixel resolution
+		private int edgeColliderResolutionPixels = 16; // 1 = 1 pixel resolution
 
 //		private Color[] splatColor = new Color[3];
 //		private Color undergroundColor = Color.black;
@@ -46,8 +46,8 @@ namespace TTT
 			EditorGUILayout.Space();
 
 			GUILayout.BeginHorizontal();
-			edgeColliderResolution = EditorGUILayout.IntField("EdgeCollider resolution",edgeColliderResolution);
-			edgeColliderResolution = (int)Mathf.Clamp(edgeColliderResolution,1,128);
+			edgeColliderResolutionPixels = EditorGUILayout.IntField("EdgeCollider resolution",edgeColliderResolutionPixels);
+			edgeColliderResolutionPixels = (int)Mathf.Clamp(edgeColliderResolutionPixels,1,128);
 			GUILayout.EndHorizontal();
 			EditorGUILayout.Space();
 
@@ -85,16 +85,13 @@ namespace TTT
 
 		void Generate2DSlices()
 		{
-
 			if (sourceSplatMap==null) {Debug.LogError("sourceSplatMap is null"); return;}
-//			TTT.TerrainTools.FixTextureSettings(sourceSplatMap);
 
 			// textures
 			if (splatTextures[0]!=null) FixTextureSettings(splatTextures[0]);
 			if (splatTextures[1]!=null) FixTextureSettings(splatTextures[1]);
 			if (splatTextures[2]!=null) FixTextureSettings(splatTextures[2]);
 			if (splatTextures[3]!=null) FixTextureSettings(splatTextures[3]);
-
 
 			Color[] splatmapColors = sourceSplatMap.GetPixels();
 			int splatWidth = sourceSplatMap.width;
@@ -109,7 +106,6 @@ namespace TTT
 
 			int targetWidth = sourceSplatMap.width;
 			int targetHeight = 128; // TODO: allow adjusting this
-
 
 			float[,] heights = TTT.TerrainTools.ReadRawHeightMap(heightmap_name,  targetWidth+1, targetWidth, targetWidth);
 
@@ -148,7 +144,6 @@ namespace TTT
 					float originalSum = splatMapColor.r+splatMapColor.g+splatMapColor.b;
 					float difference = 3f-originalSum;
 					float fixValue = difference/3f;
-
 
 					splatMixColor = CombineColors(tex1c*(splatMapColor.r+fixValue),tex2c*(splatMapColor.g+fixValue),tex3c*(splatMapColor.b+fixValue));
 
@@ -216,7 +211,7 @@ namespace TTT
 				EdgeCollider2D edge = go.AddComponent<EdgeCollider2D>();
 				List<Vector2> verts = new List<Vector2>();
 
-				for (int x = 0; x < targetWidth+edgeColliderResolution-1; x+=edgeColliderResolution)
+				for (int x = 0; x < targetWidth+edgeColliderResolutionPixels-1; x+=edgeColliderResolutionPixels)
 				{
 					bool foundedSurface=false;
 					for (int y = 0; y < targetHeight; y++) 

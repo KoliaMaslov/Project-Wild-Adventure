@@ -12,8 +12,16 @@ public class BasicPanelControl : MonoBehaviour
     public GameObject gameEndPanel;
     public GameObject goalPanel;
     public GameObject achievementBT;
+    public int health;
+    public int stamina;
+    public int hunger;
+    [SerializeField] private TextMeshProUGUI healthBar;
+    [SerializeField] private TextMeshProUGUI staminaBar;
+    [SerializeField] private TextMeshProUGUI hungerBar;
+
 
     [SerializeField] private PlayerMainScript player;
+    [SerializeField] private PlayerMovement playerMovement;
     public GameObject temp;
 
     public TextMeshProUGUI moneyText;
@@ -30,9 +38,13 @@ public class BasicPanelControl : MonoBehaviour
         for (int c = 0; c < isCellOccupied.Length; c++) isCellOccupied[c] = false;
         temp = GameObject.FindGameObjectWithTag("Player");
         temp.TryGetComponent<PlayerMainScript>(out player);
+        temp.TryGetComponent<PlayerMovement>(out playerMovement);
 
         money = 1000;
         moneyText.text = "Money: " + money.ToString();
+        HealthTextUpdate(health);
+        StaminaTextUpdate(stamina);
+        HungerTextUpdate(hunger);
     }
 
     void Update()
@@ -123,5 +135,20 @@ public class BasicPanelControl : MonoBehaviour
         {
             gameEndPanel.SetActive(true);
         }
+    }
+
+    public void HealthTextUpdate(int number)
+    {
+        healthBar.text = number.ToString() + "%";
+    }
+
+    public void StaminaTextUpdate(int number)
+    {
+        staminaBar.text = number.ToString() + "%";
+    }
+
+    public void HungerTextUpdate(int number)
+    {
+        hungerBar.text = number.ToString() + "%";
     }
 }

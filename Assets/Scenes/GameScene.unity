@@ -11124,7 +11124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15577,7 +15577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20636,7 +20636,15 @@ MonoBehaviour:
   gameEndPanel: {fileID: 1362372384}
   goalPanel: {fileID: 604335508}
   achievementBT: {fileID: 541490634}
+  health: 100
+  stamina: 100
+  hunger: 100
+  healthBar: {fileID: 1697959301}
+  staminaBar: {fileID: 665958982}
+  hungerBar: {fileID: 500867349}
   player: {fileID: 8182362698136348467, guid: 7d6c0fa325c79d7448d0d3f2101511f4, type: 3}
+  playerMovement: {fileID: 4083896383874378064, guid: 7d6c0fa325c79d7448d0d3f2101511f4,
+    type: 3}
   temp: {fileID: 0}
   moneyText: {fileID: 80915684}
   money: 0
@@ -38893,7 +38901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100%
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

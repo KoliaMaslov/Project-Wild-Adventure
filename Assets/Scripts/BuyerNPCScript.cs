@@ -10,14 +10,7 @@ public class BuyerNPCScript : MonoBehaviour
     private bool isInTrigger = false;
     void Start()
     {
-        if (basicPanel != null)
-        {
-            Debug.Log(basicPanel.money);
-/*            basicPanel.money += 20;
-            basicPanel.moneyText.text = "Money: " + basicPanel.money.ToString();
-            Debug.Log(basicPanel.money);
-            Debug.Log(basicPanel.moneyText.text);*/
-        }
+
     }
 
 
@@ -27,14 +20,6 @@ public class BuyerNPCScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Debug.Log("Sell Loot");
-                /*for (int i = 0; i < inventory.lootPositionInArray.Length; i++)
-                {
-                    for (int j = 0; j < 5; j++)
-                    {
-                        Debug.Log(inventory.lootPositionInArray[j]);
-                    }
-//                    inventory.DeleteItemInInventory(inventory.lootPositionInArray[i]);
-                }*/
                 for (int i = 0; i < inventory.itemsType.Length; i++)
                 {
                     switch(inventory.itemsType[i])

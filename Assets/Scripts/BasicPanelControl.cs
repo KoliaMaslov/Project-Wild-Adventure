@@ -12,6 +12,7 @@ public class BasicPanelControl : MonoBehaviour
     public GameObject gameEndPanel;
     public GameObject goalPanel;
     public GameObject achievementBT;
+    public GameObject gameEndBadScenarionPanel;
     public int health;
     public int stamina;
     public int hunger;
@@ -22,6 +23,7 @@ public class BasicPanelControl : MonoBehaviour
 
     [SerializeField] private PlayerMainScript player;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private GameObject playerObj;
     public GameObject temp;
 
     public TextMeshProUGUI moneyText;
@@ -36,10 +38,6 @@ public class BasicPanelControl : MonoBehaviour
     void Start()
     {
         for (int c = 0; c < isCellOccupied.Length; c++) isCellOccupied[c] = false;
-        temp = GameObject.FindGameObjectWithTag("Player");
-        temp.TryGetComponent<PlayerMainScript>(out player);
-        temp.TryGetComponent<PlayerMovement>(out playerMovement);
-
         money = 1000;
         moneyText.text = "Money: " + money.ToString();
         HealthTextUpdate(health);
@@ -49,6 +47,16 @@ public class BasicPanelControl : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+        {
+            temp = GameObject.FindGameObjectWithTag("Player");
+            temp.TryGetComponent<PlayerMainScript>(out player);
+        }
+        if (playerMovement == null)
+        {
+            temp = GameObject.FindGameObjectWithTag("Player");
+            temp.TryGetComponent<PlayerMovement>(out playerMovement);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1) && isCellOccupied[0])
         {
             SwitchItemType(equippedItemType[0]);
@@ -62,6 +70,12 @@ public class BasicPanelControl : MonoBehaviour
             isMoneyAchievementComplete = true;
             achievementBT.SetActive(true);
         }
+        if (health <= 0)
+        {
+            gameEndBadScenarionPanel.SetActive(true);
+            Destroy(playerObj);
+        }
+        if (playerObj == null) playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 
     //open inventory panel

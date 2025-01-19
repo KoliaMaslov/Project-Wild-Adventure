@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         isPlayerGrounded = controller.isGrounded;
@@ -85,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HungerControl()
     {
-        if (!isRunning && !isHungerOnCooldown && basicPanel.hunger > 0 && basicPanel.stamina < 100) StartCoroutine(UseHunger(0.5f, 5));
+        if (!isRunning && !isHungerOnCooldown && basicPanel.hunger > 0 && basicPanel.stamina < 100) StartCoroutine(UseHunger(0.5f, 2));
     }
 
     private void Jump()

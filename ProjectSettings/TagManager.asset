@@ -15,6 +15,9 @@ TagManager:
   - AnimationController
   - Axe
   - Ore
+  - Animal
+  - GunPrototype
+  - Gun
   layers:
   - Default
   - TransparentFX

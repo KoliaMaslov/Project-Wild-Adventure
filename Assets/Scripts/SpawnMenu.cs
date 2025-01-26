@@ -9,7 +9,7 @@ public class SpawnMenu : MonoBehaviour
     public GameObject basicPanel;
     public GameObject playerPrefab;
     public bool isSpawned = false;
-    public Vector3 spawnPosition;
+    public Transform spawnPosition;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class SpawnMenu : MonoBehaviour
     {
         if (!isSpawned)
         {
-            Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(playerPrefab, spawnPosition.position, Quaternion.identity);
             isSpawned = true;
         }
         spawnPanel.SetActive(false);

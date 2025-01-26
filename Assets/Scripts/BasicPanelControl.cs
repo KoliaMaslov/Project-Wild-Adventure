@@ -21,7 +21,7 @@ public class BasicPanelControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hungerBar;
 
 
-    [SerializeField] private PlayerMainScript player;
+    [SerializeField] private PlayerMainScript mainPlayer;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private GameObject playerObj;
     public GameObject temp;
@@ -47,10 +47,10 @@ public class BasicPanelControl : MonoBehaviour
 
     void Update()
     {
-        if (player == null)
+        if (mainPlayer == null)
         {
             temp = GameObject.FindGameObjectWithTag("Player");
-            temp.TryGetComponent<PlayerMainScript>(out player);
+            temp.TryGetComponent<PlayerMainScript>(out mainPlayer);
         }
         if (playerMovement == null)
         {
@@ -64,6 +64,10 @@ public class BasicPanelControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && isCellOccupied[1])
         {
             SwitchItemType(equippedItemType[1]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isCellOccupied[2])
+        {
+            SwitchItemType(equippedItemType[2]);
         }
         if (!isMoneyAchievementComplete && money >= 2000)
         {
@@ -112,15 +116,26 @@ public class BasicPanelControl : MonoBehaviour
         }
     }
 
+    public void OnThirdBTClich()
+    {
+        if (isCellOccupied[2])
+        {
+            SwitchItemType(equippedItemType[2]);
+        }
+    }
+
     private void SwitchItemType(string type)
     {
         switch (type)
         {
             case "Pickaxe":
-                player.TakePickaxe();
+                mainPlayer.TakePickaxe();
                 break;
             case "Axe":
-                player.TakeAxe();
+                mainPlayer.TakeAxe();
+                break;
+            case "Gun":
+                mainPlayer.TakeGun();
                 break;
             default:
                 break;

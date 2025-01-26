@@ -9,12 +9,15 @@ public class PlayerMainScript : MonoBehaviour
     public bool isHandfree = true;
     public bool isPickaxeEquipped = false;
     public bool isAxeEquipped = false;
+    public bool isGunEquipped = false;
     public GameObject player;
     public GameObject pickaxePrefab;
     private GameObject pickaxe;
     public GameObject axePrefab;
     private GameObject axe;
     public Transform itemHolder;
+    public GameObject gunPrefab;
+    private GameObject gun;
     void Start()
     {
         LockCursor();
@@ -23,6 +26,7 @@ public class PlayerMainScript : MonoBehaviour
 
     void Update()
     {
+        //if (player == null) player = GameObject.FindWithTag("Player");
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (isLocked)
@@ -61,19 +65,19 @@ public class PlayerMainScript : MonoBehaviour
 
     public void TakePickaxe()
     {
+        if(itemHolder == null) itemHolder = player.transform.Find("ItemHolder");
         if (itemHolder)
         {
             if (isHandfree && !isPickaxeEquipped)
             {
                 Vector3 pos = itemHolder.position;
- //               Debug.Log(pos);
                 pickaxe = Instantiate(pickaxePrefab, pos, player.transform.rotation, player.transform);
-//                pickaxe.transform.parent = player.transform;
                 isHandfree = false;
                 isPickaxeEquipped = true;
             }
             else if (isPickaxeEquipped)
             {
+                Debug.Log("3etap");
                 Destroy(pickaxe);
                 isHandfree = true;
                 isPickaxeEquipped = false;
@@ -88,9 +92,8 @@ public class PlayerMainScript : MonoBehaviour
             if (isHandfree && !isAxeEquipped)
             {
                 Vector3 pos = itemHolder.position;
-                axe = Instantiate(axePrefab, pos, player.transform.rotation, player.transform);
-                axe.transform.Rotate(0f, 90f, 0f);
-//                axe.transform.parent = player.transform;
+                axe = Instantiate(axePrefab, pos, transform.rotation, player.transform);
+                axe.transform.Rotate(0f, 0f, 0f);
                 isHandfree = false;
                 isAxeEquipped = true;
             }
@@ -99,6 +102,27 @@ public class PlayerMainScript : MonoBehaviour
                 Destroy(axe);
                 isHandfree = true;
                 isAxeEquipped = false;
+            }
+        }
+    }
+
+    public void TakeGun()
+    {
+        if (itemHolder)
+        {
+            if (isHandfree && !isGunEquipped)
+            {
+                Vector3 pos = itemHolder.position;
+                gun = Instantiate(gunPrefab, pos, transform.rotation, player.transform);
+                gun.transform.Rotate(0f, 180f, 0f);
+                isHandfree = false;
+                isGunEquipped = true;
+            }
+            else if (isGunEquipped)
+            {
+                Destroy(gun);
+                isHandfree = true;
+                isGunEquipped = false;
             }
         }
     }

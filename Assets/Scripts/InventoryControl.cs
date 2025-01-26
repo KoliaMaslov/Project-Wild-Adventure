@@ -13,6 +13,7 @@ public class InventoryControl : MonoBehaviour
     [Header("ItemsSprites")]
     public Sprite pickaxe;
     public Sprite axe;
+    public Sprite gun;
     public Sprite coal;
     public Sprite copper;
     public Sprite iron;
@@ -48,6 +49,7 @@ public class InventoryControl : MonoBehaviour
         for (int c = 0; c < itemsType.Length; c++) itemsType[c] = "Undetected";
         AddItem("Pickaxe");
         AddItem("Axe");
+        AddItem("Gun");
     }
 
     private void Update()
@@ -107,6 +109,10 @@ public class InventoryControl : MonoBehaviour
             case "Axe":
                 currentItem = axe;
                 currentType = "Axe";
+                break;
+            case "Gun":
+                currentItem = gun;
+                currentType = "Gun";
                 break;
         }
         int i = 0;
@@ -326,6 +332,12 @@ public class InventoryControl : MonoBehaviour
                     chosenItemSprite.sprite = axe;
                     itemName.text = "Tier 3 axe";
                     itemType.text = "Tool";
+                    canBeEquipped[item] = true;
+                    break;
+                case "Gun":
+                    chosenItemSprite.sprite = gun;
+                    itemName.text = "Vinchester rifle";
+                    itemType.text = "Gun";
                     canBeEquipped[item] = true;
                     break;
                 default:

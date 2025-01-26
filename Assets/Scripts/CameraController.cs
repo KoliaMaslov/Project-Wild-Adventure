@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
-    public RotationAxes axes = RotationAxes.MouseXAndY;
-    public float sensevityH = 9f;
-    public float sensevityV = 4f;
-    private float maxYRotation = 20f;
-    private float minYRotation = -20f;
-    private float rotationX = 0f;
+    [SerializeField] private SpawnMenu spawnMenu;
     [SerializeField] private PlayerMainScript playerScript;
+    public GameObject player;
+    public float mouseSensitivity = 100f;
+    public float distanceFromPlayer = 10f; 
+
+    private float xRotation = 0f;
+    private float yRotation = 0f;
     void Start()
     {
 
@@ -19,26 +19,30 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (playerScript.isLocked || Input.GetMouseButton(1))
+        if (spawnMenu.isSpawned)
         {
-            if (axes == RotationAxes.MouseX)
+            if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+            if (playerScript == null) playerScript = player.GetComponent<PlayerMainScript>();
+        }
+        if (playerScript)
+        {
+            if (playerScript.isLocked)
             {
-                transform.Rotate(0, Input.GetAxis("Mouse X") * sensevityH, 0);
-            }
-            else if (axes == RotationAxes.MouseY)
-            {
-                rotationX = rotationX - Input.GetAxis("Mouse Y") * sensevityV;
-                rotationX = Mathf.Clamp(rotationX, minYRotation, maxYRotation);
-                float rotationY = transform.localEulerAngles.y;
-                transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
-            }
-            else
-            {
-                rotationX = rotationX - Input.GetAxis("Mouse Y") * sensevityV;
-                rotationX = Mathf.Clamp(rotationX, minYRotation, maxYRotation);
-                float delta = Input.GetAxis("Mouse X") * sensevityH;
-                float rotationY = transform.localEulerAngles.y + delta;
-                transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
+                float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+                player.transform.Rotate(0f, mouseX, 0f);
+
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, 0f, 80f);
+
+                yRotation += mouseX;
+
+                Vector3 direction = new Vector3(0, 0, -distanceFromPlayer);
+                Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0);
+
+                transform.position = player.transform.position + rotation * direction;
+                transform.LookAt(player.transform.position);
             }
         }
     }

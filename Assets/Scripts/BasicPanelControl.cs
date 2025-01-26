@@ -19,6 +19,7 @@ public class BasicPanelControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthBar;
     [SerializeField] private TextMeshProUGUI staminaBar;
     [SerializeField] private TextMeshProUGUI hungerBar;
+    [SerializeField] private GameObject aimImage;
 
 
     [SerializeField] private PlayerMainScript mainPlayer;
@@ -80,6 +81,8 @@ public class BasicPanelControl : MonoBehaviour
             Destroy(playerObj);
         }
         if (playerObj == null) playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (mainPlayer.isGunEquipped) aimImage.SetActive(true);
+        else if (!mainPlayer.isGunEquipped) aimImage.SetActive(false);
     }
 
     //open inventory panel

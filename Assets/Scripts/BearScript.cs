@@ -65,6 +65,11 @@ public class BearScript : MonoBehaviour
         }
     }
 
+    public void ReactToHit()
+    {
+        Debug.Log("Hit");
+    }
+
     IEnumerator AttackPlayer(int damage, float cooldown)
     {
         if (basicPanel == null)

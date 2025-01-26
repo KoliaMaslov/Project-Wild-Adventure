@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMainScript : MonoBehaviour
 {
+    [SerializeField] private Camera camera;
     public bool isLocked = true;
     public bool isHandfree = true;
     public bool isPickaxeEquipped = false;
     public bool isAxeEquipped = false;
     public bool isGunEquipped = false;
+    private bool isOnCooldown = false;
     public GameObject player;
     public GameObject pickaxePrefab;
     private GameObject pickaxe;
@@ -18,10 +21,13 @@ public class PlayerMainScript : MonoBehaviour
     public Transform itemHolder;
     public GameObject gunPrefab;
     private GameObject gun;
+    private float cooldown = 1f;
     void Start()
     {
         LockCursor();
         itemHolder = player.transform.Find("ItemHolder");
+        var temp = GameObject.FindWithTag("MainCamera");
+        temp.TryGetComponent<Camera>(out camera);
     }
 
     void Update()
@@ -38,15 +44,7 @@ public class PlayerMainScript : MonoBehaviour
                 LockCursor();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //TakePickaxe();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            //TakeAxe();
-        }
-        
+        if (Input.GetMouseButtonDown(0) && isGunEquipped && !isOnCooldown) Shoot();
     }
 
     public void LockCursor()
@@ -126,4 +124,50 @@ public class PlayerMainScript : MonoBehaviour
             }
         }
     }
+
+    private void Shoot()
+    {
+        Vector3 point = new Vector3(camera.pixelWidth / 2, (camera.pixelHeight / 2) + 300f, 0);
+        Ray ray = camera.ScreenPointToRay(point);
+        RaycastHit hit;
+        //ShootSound();
+        if (Physics.Raycast(ray, out hit))
+        {
+            GameObject hitObject = hit.transform.gameObject;
+            BearScript bear = hitObject.GetComponent<BearScript>();
+            if (bear != null)
+            {
+                bear.ReactToHit();
+            }
+            else
+            {
+                StartCoroutine(SphereIndicator(hit.point));
+            }
+            StartCoroutine(ShootCooldown(cooldown));
+        }
+    }
+
+    private IEnumerator SphereIndicator(Vector3 pos)
+    {
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.position = pos;
+        yield return new WaitForSeconds(3);
+        Destroy(sphere);
+    }
+
+    private IEnumerator ShootCooldown(float cooldown)
+    {
+        isOnCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        isOnCooldown = false;
+    }
+
+    /*private void ShootSound()
+    {
+        if (shootSound && shootSound.clip)
+        {
+            shootSound.Play();
+        }
+    }*/
+
 }

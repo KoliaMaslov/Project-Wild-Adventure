@@ -14,9 +14,9 @@ public class BearScript : MonoBehaviour
     private float walkSpeed = 2f;
     private float runSpeed = 5f;
     private float cooldown = 3f;
-    private int damage = 20;
+    public int health = 300;
+    private int damage = 40;
     private GameObject target;
-    private bool isGrounded;
     private bool isOnCooldown = false;
     private Transform spawnPos;
     void Start()
@@ -65,9 +65,10 @@ public class BearScript : MonoBehaviour
         }
     }
 
-    public void ReactToHit()
+    public void ReactToHit(int damageTaken)
     {
         Debug.Log("Hit");
+        health -= damageTaken;
     }
 
     IEnumerator AttackPlayer(int damage, float cooldown)

@@ -7,6 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerMainScript : MonoBehaviour
 {
     [SerializeField] private Camera camera;
+    [SerializeField] private AudioSource shotSound;
     public bool isLocked = true;
     public bool isHandfree = true;
     public bool isPickaxeEquipped = false;
@@ -22,6 +23,7 @@ public class PlayerMainScript : MonoBehaviour
     public GameObject gunPrefab;
     private GameObject gun;
     private float cooldown = 1f;
+    private int gunDamage = 60;
     void Start()
     {
         LockCursor();
@@ -130,14 +132,14 @@ public class PlayerMainScript : MonoBehaviour
         Vector3 point = new Vector3(camera.pixelWidth / 2, (camera.pixelHeight / 2) + 300f, 0);
         Ray ray = camera.ScreenPointToRay(point);
         RaycastHit hit;
-        //ShootSound();
+        ShotSound();
         if (Physics.Raycast(ray, out hit))
         {
             GameObject hitObject = hit.transform.gameObject;
             BearScript bear = hitObject.GetComponent<BearScript>();
             if (bear != null)
             {
-                bear.ReactToHit();
+                bear.ReactToHit(gunDamage);
             }
             else
             {
@@ -145,6 +147,11 @@ public class PlayerMainScript : MonoBehaviour
             }
             StartCoroutine(ShootCooldown(cooldown));
         }
+    }
+
+    private void ShotSound()
+    {
+        if(shotSound && shotSound.clip) shotSound.Play();
     }
 
     private IEnumerator SphereIndicator(Vector3 pos)

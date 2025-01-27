@@ -48,6 +48,14 @@ public class BuyerNPCScript : MonoBehaviour
                             inventory.DeleteItemInInventory(i);
                             basicPanel.money += 200;
                             break;
+                        case "RawSteak":
+                            inventory.DeleteItemInInventory(i);
+                            basicPanel.money += 50;
+                            break;
+                        case "RawHam":
+                            inventory.DeleteItemInInventory(i);
+                            basicPanel.money += 100;
+                            break;
                         default:
                             break;
                     }

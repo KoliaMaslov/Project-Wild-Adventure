@@ -2958,6 +2958,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 135027884}
   bearPrefab: {fileID: 8915519364912543480, guid: 77e537d54e9b105448c18017a08f6fd2,
     type: 3}
+  bear: {fileID: 0}
+  inventory: {fileID: 256948410}
 --- !u!1 &135910828
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,6 +6061,8 @@ MonoBehaviour:
   sandstone: {fileID: 21300000, guid: 9878b655fca6de148ac52ccf06c806b0, type: 3}
   silver: {fileID: 21300000, guid: 918cdf95887154547a61621d8786d00f, type: 3}
   gold: {fileID: 21300000, guid: b23ffd7df41450a488e6c9c7fea2df9b, type: 3}
+  rawSteak: {fileID: 21300000, guid: aaf34d85bf22491468456719af1d771f, type: 3}
+  rawHam: {fileID: 21300000, guid: 58ca78689544b6e45a3213feeef78519, type: 3}
   empty: {fileID: 21300000, guid: f64d66a40b1ab8e45ab5c1a6068dd77a, type: 3}
   chosenItemSprite: {fileID: 32537394}
   itemName: {fileID: 805124706}
@@ -43956,6 +43960,8 @@ MonoBehaviour:
   spawnPoint: {fileID: 1886354542}
   bearPrefab: {fileID: 8915519364912543480, guid: 77e537d54e9b105448c18017a08f6fd2,
     type: 3}
+  bear: {fileID: 0}
+  inventory: {fileID: 256948410}
 --- !u!1 &1887899608
 GameObject:
   m_ObjectHideFlags: 0

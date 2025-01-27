@@ -20,6 +20,8 @@ public class InventoryControl : MonoBehaviour
     public Sprite sandstone;
     public Sprite silver;
     public Sprite gold;
+    public Sprite rawSteak;
+    public Sprite rawHam;
     public Sprite empty;
 
     [Header("ChosenItem")]
@@ -113,6 +115,14 @@ public class InventoryControl : MonoBehaviour
             case "Gun":
                 currentItem = gun;
                 currentType = "Gun";
+                break;
+            case "Raw Steak":
+                currentItem = rawSteak;
+                currentType = "RawSteak";
+                break;
+            case "Raw Ham":
+                currentItem = rawHam;
+                currentType = "RawHam";
                 break;
         }
         int i = 0;
@@ -326,19 +336,34 @@ public class InventoryControl : MonoBehaviour
                     chosenItemSprite.sprite = pickaxe;
                     itemName.text = "Tier 6 pickaxe";
                     itemType.text = "Tool";
+                    sellPrice.text = "Cannot be sold";
                     canBeEquipped[item] = true;
                     break;
                 case "Axe":
                     chosenItemSprite.sprite = axe;
                     itemName.text = "Tier 3 axe";
                     itemType.text = "Tool";
+                    sellPrice.text = "Cannot be sold";
                     canBeEquipped[item] = true;
                     break;
                 case "Gun":
                     chosenItemSprite.sprite = gun;
                     itemName.text = "Vinchester rifle";
                     itemType.text = "Gun";
+                    sellPrice.text = "Cannot be sold";
                     canBeEquipped[item] = true;
+                    break;
+                case "RawSteak":
+                    chosenItemSprite.sprite = rawSteak;
+                    itemName.text = "Raw Steak";
+                    itemType.text = "Loot / Coocking ingredient";
+                    sellPrice.text = "Sell Price: 50";
+                    break;
+                case "RawHam":
+                    chosenItemSprite.sprite = rawHam;
+                    itemName.text = "Raw Ham";
+                    itemType.text = "Loot / Coocking ingredient";
+                    sellPrice.text = "Sell Price: 100";
                     break;
                 default:
                     break;

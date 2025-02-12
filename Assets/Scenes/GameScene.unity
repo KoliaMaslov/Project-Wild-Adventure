@@ -6587,7 +6587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &272023766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6609,7 +6609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -208}
+  m_AnchoredPosition: {x: 630, y: -520}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &278609046
@@ -7619,7 +7619,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1548178335}
+      - m_Target: {fileID: 1192675476}
         m_TargetAssemblyTypeName: MiningNPCControl, Assembly-CSharp
         m_MethodName: OnCloseBTClick
         m_Mode: 1
@@ -8056,7 +8056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Peacekeeper Revolver
+  m_text: Peacekeeper Rifle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13317,6 +13317,18 @@ MonoBehaviour:
   hits: 0
   hitsNeededToDestroy: 0
   currentOre: 
+--- !u!114 &571726413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5894082272972497851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd12f122bdc0a140a7da3d83ec18544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &573144016
 GameObject:
   m_ObjectHideFlags: 0
@@ -13763,7 +13775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy for 0$
+  m_text: Buy for 500$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15266,15 +15278,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 21eeb7a2149a91048850ea83066f953a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -19402,6 +19414,140 @@ RectTransform:
   m_AnchoredPosition: {x: 630, y: -346.66666}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &810170233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810170238}
+  - component: {fileID: 810170237}
+  - component: {fileID: 810170236}
+  - component: {fileID: 810170235}
+  - component: {fileID: 810170234}
+  m_Layer: 0
+  m_Name: TestPlane (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &810170234
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810170233}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &810170235
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810170233}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &810170236
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810170233}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &810170237
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810170233}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &810170238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810170233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 500, z: 0}
+  m_LocalScale: {x: 6, y: 1, z: 4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &822286425
 GameObject:
   m_ObjectHideFlags: 0
@@ -20308,7 +20454,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 862195294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 571726413}
+        m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnFirstBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &862195294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20362,7 +20520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &867378805
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20384,7 +20542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -624}
+  m_AnchoredPosition: {x: 630, y: -346.66666}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &869879659
@@ -23015,7 +23173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1015108215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26598,15 +26756,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 44f461799fdc500448d3b3a48b55695e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -27395,7 +27553,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1885113696}
+      - m_Target: {fileID: 571726413}
         m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
         m_MethodName: OnCloseBTClick
         m_Mode: 1
@@ -27445,6 +27603,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192055708}
   m_CullTransparentMesh: 1
+--- !u!114 &1192675476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7199131440778804465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a34a98230ac9c742ab9b4c579e93f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1202043048
 GameObject:
   m_ObjectHideFlags: 0
@@ -31769,7 +31939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1410868458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31791,7 +31961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -416}
+  m_AnchoredPosition: {x: 630, y: -260}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1413507362
@@ -32487,7 +32657,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1433097901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192675476}
+        m_TargetAssemblyTypeName: MiningNPCControl, Assembly-CSharp
+        m_MethodName: OnFirstBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433097901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35344,7 +35526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1536263822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35366,7 +35548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -624}
+  m_AnchoredPosition: {x: 630, y: -346.66666}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1537121391
@@ -35894,7 +36076,6 @@ GameObject:
   - component: {fileID: 1548178332}
   - component: {fileID: 1548178334}
   - component: {fileID: 1548178333}
-  - component: {fileID: 1548178335}
   m_Layer: 5
   m_Name: MiningNPC (Panel)
   m_TagString: Untagged
@@ -35963,21 +36144,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548178331}
   m_CullTransparentMesh: 1
---- !u!114 &1548178335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548178331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a34a98230ac9c742ab9b4c579e93f92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopPanel: {fileID: 1548178331}
-  interactText: {fileID: 0}
-  sellLootText: {fileID: 0}
 --- !u!1 &1548501828
 GameObject:
   m_ObjectHideFlags: 0
@@ -36124,7 +36290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1548804844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36146,7 +36312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -416}
+  m_AnchoredPosition: {x: 630, y: -693.3333}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1558270577
@@ -36206,7 +36372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy for 0$
+  m_text: Buy for 500$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -38606,7 +38772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1648939239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38628,7 +38794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -832}
+  m_AnchoredPosition: {x: 630, y: -520}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1653892755
@@ -43829,7 +43995,6 @@ GameObject:
   - component: {fileID: 1885113693}
   - component: {fileID: 1885113695}
   - component: {fileID: 1885113694}
-  - component: {fileID: 1885113696}
   m_Layer: 5
   m_Name: GunsmithNPC (Panel)
   m_TagString: Untagged
@@ -43898,21 +44063,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885113692}
   m_CullTransparentMesh: 1
---- !u!114 &1885113696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885113692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd12f122bdc0a140a7da3d83ec18544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopPanel: {fileID: 1885113692}
-  interactText: {fileID: 0}
-  sellLootText: {fileID: 0}
 --- !u!1 &1886354541
 GameObject:
   m_ObjectHideFlags: 0
@@ -46985,7 +47135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1976863914
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47007,7 +47157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -832}
+  m_AnchoredPosition: {x: 630, y: -520}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1977165450
@@ -50621,14 +50771,44 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
         type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 256948410}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
       propertyPath: shopPanel
       value: 
       objectReference: {fileID: 1885113692}
     - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
         type: 3}
+      propertyPath: fifthButton
+      value: 
+      objectReference: {fileID: 290759045}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
+      propertyPath: firstButton
+      value: 
+      objectReference: {fileID: 862195291}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
+      propertyPath: thirdButton
+      value: 
+      objectReference: {fileID: 1844193932}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
+      propertyPath: fourthButton
+      value: 
+      objectReference: {fileID: 763400520}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
       propertyPath: interactText
       value: 
       objectReference: {fileID: 450034732}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
+      propertyPath: secondButton
+      value: 
+      objectReference: {fileID: 520094041}
     - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
         type: 3}
       propertyPath: sellLootText
@@ -50704,14 +50884,44 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
         type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 256948410}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
       propertyPath: shopPanel
       value: 
       objectReference: {fileID: 1548178331}
     - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
         type: 3}
+      propertyPath: fifthButton
+      value: 
+      objectReference: {fileID: 1588709014}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
+      propertyPath: firstButton
+      value: 
+      objectReference: {fileID: 1433097898}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
+      propertyPath: thirdButton
+      value: 
+      objectReference: {fileID: 771146534}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
+      propertyPath: fourthButton
+      value: 
+      objectReference: {fileID: 621336148}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
       propertyPath: interactText
       value: 
       objectReference: {fileID: 450034732}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
+      propertyPath: secondButton
+      value: 
+      objectReference: {fileID: 798559932}
     - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
         type: 3}
       propertyPath: sellLootText
@@ -51103,6 +51313,7 @@ SceneRoots:
   - {fileID: 1548501832}
   - {fileID: 1931428472}
   - {fileID: 1721813252}
+  - {fileID: 810170238}
   - {fileID: 9132078142081501114}
   - {fileID: 1469930439}
   - {fileID: 911066455}

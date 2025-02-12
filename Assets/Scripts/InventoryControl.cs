@@ -49,9 +49,9 @@ public class InventoryControl : MonoBehaviour
         for (int c = 0; c < canBeEquipped.Length; c++) canBeEquipped[c] = false;
         for (int c = 0; c < isItemEquipped.Length; c++) isItemEquipped[c] = false;
         for (int c = 0; c < itemsType.Length; c++) itemsType[c] = "Undetected";
-        AddItem("Pickaxe");
-        AddItem("Axe");
-        AddItem("Gun");
+        //AddItem("Pickaxe");
+        //AddItem("Axe");
+        //AddItem("Gun");
     }
 
     private void Update()

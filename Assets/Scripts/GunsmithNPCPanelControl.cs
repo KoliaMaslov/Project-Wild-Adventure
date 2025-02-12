@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class GunsmithNPCPanelControl : MonoBehaviour
 {
-    public GameObject shopPanel;
+    [SerializeField] private InventoryControl inventory;
+    [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject interactText;
     [SerializeField] private GameObject sellLootText;
+    [SerializeField] private GameObject firstButton;
+    [SerializeField] private GameObject secondButton;
+    [SerializeField] private GameObject thirdButton;
+    [SerializeField] private GameObject fourthButton;
+    [SerializeField] private GameObject fifthButton;
     private bool isInTrigger = false;
+    private string firstItemType = "Gun";
     void Start()
     {
 
@@ -48,5 +55,12 @@ public class GunsmithNPCPanelControl : MonoBehaviour
     public void OnCloseBTClick()
     {
         shopPanel.SetActive(false);
+    }
+
+    //buy first item
+    public void OnFirstBTClick()
+    {
+        firstButton.SetActive(false);
+        inventory.AddItem(firstItemType);
     }
 }

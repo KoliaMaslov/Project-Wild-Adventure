@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 7f;
     public CharacterController controller;
     public Rigidbody rb;
-    private Vector3 movement;
     private float gravityCoef = -9.78f;
     public float jumpHeight = 1f;
     private bool isPlayerGrounded;
@@ -17,14 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isRunning = false;
     private bool isHungerOnCooldown = false;
     private bool isJumpOnCooldown = false;
+    [SerializeField] private PlayerMainScript player;
     [SerializeField] private BasicPanelControl basicPanel;
 
     void Start()
     {
-        if (controller == null)
-        {
-            GetComponent<CharacterController>();
-        }
+        if (controller == null) GetComponent<CharacterController>();
         if (rb == null) GetComponent<Rigidbody>();
         if (basicPanel == null)
         {
@@ -35,10 +32,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        isPlayerGrounded = controller.isGrounded;
         SpeedControl();
         StaminaControl();
         HungerControl();
+        if (player.isLocked) Movement();
+    }
+
+    private void Movement()
+    {
+        isPlayerGrounded = controller.isGrounded;
         float deltaX = Input.GetAxis("Horizontal") * speed;
         float deltaZ = Input.GetAxis("Vertical") * speed;
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
@@ -52,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         movement = transform.TransformDirection(movement);
         controller.Move(movement);
     }
-
     private void SpeedControl()
     {
         if (basicPanel.stamina >= 4 && basicPanel.hunger > 0) canRun = true;

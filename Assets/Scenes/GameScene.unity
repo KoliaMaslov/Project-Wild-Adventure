@@ -16858,6 +16858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96be9306d7cb26e438f8dc6bdab4810e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveManager: {fileID: 0}
   basicPanel: {fileID: 880993070}
   inventory: {fileID: 256948410}
   interactText: {fileID: 450034732}
@@ -21088,6 +21089,7 @@ GameObject:
   - component: {fileID: 880993069}
   - component: {fileID: 880993068}
   - component: {fileID: 880993070}
+  - component: {fileID: 880993071}
   m_Layer: 5
   m_Name: BasicPanel (Panel)
   m_TagString: Untagged
@@ -21195,13 +21197,13 @@ MonoBehaviour:
   staminaBar: {fileID: 665958982}
   hungerBar: {fileID: 500867349}
   aimImage: {fileID: 1914092001}
+  moneyText: {fileID: 80915684}
+  saveManager: {fileID: 880993071}
   mainPlayer: {fileID: 0}
   playerMovement: {fileID: 4083896383874378064, guid: 7d6c0fa325c79d7448d0d3f2101511f4,
     type: 3}
   playerObj: {fileID: 0}
   temp: {fileID: 0}
-  moneyText: {fileID: 80915684}
-  money: 0
   completedAchievements: 0
   equippedItems:
   - {fileID: 235059497}
@@ -21218,6 +21220,20 @@ MonoBehaviour:
   - 
   - 
   - 
+--- !u!114 &880993071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880993066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaea56b405269447b6888f1f94704bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicPanel: {fileID: 880993070}
+  money: 0
 --- !u!1 &881404361
 GameObject:
   m_ObjectHideFlags: 0
@@ -22865,6 +22881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96be9306d7cb26e438f8dc6bdab4810e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveManager: {fileID: 880993071}
   basicPanel: {fileID: 880993070}
   inventory: {fileID: 256948410}
   interactText: {fileID: 450034732}
@@ -50791,6 +50808,11 @@ PrefabInstance:
       objectReference: {fileID: 862195291}
     - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
         type: 3}
+      propertyPath: saveManager
+      value: 
+      objectReference: {fileID: 880993071}
+    - target: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
+        type: 3}
       propertyPath: thirdButton
       value: 
       objectReference: {fileID: 1844193932}
@@ -50902,6 +50924,11 @@ PrefabInstance:
       propertyPath: firstButton
       value: 
       objectReference: {fileID: 1433097898}
+    - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
+        type: 3}
+      propertyPath: saveManager
+      value: 
+      objectReference: {fileID: 880993071}
     - target: {fileID: -4378333414010792025, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
         type: 3}
       propertyPath: thirdButton

@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMainScript : MonoBehaviour
 {
@@ -34,7 +31,6 @@ public class PlayerMainScript : MonoBehaviour
 
     void Update()
     {
-        //if (player == null) player = GameObject.FindWithTag("Player");
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (isLocked)
@@ -77,7 +73,6 @@ public class PlayerMainScript : MonoBehaviour
             }
             else if (isPickaxeEquipped)
             {
-                Debug.Log("3etap");
                 Destroy(pickaxe);
                 isHandfree = true;
                 isPickaxeEquipped = false;
@@ -168,13 +163,4 @@ public class PlayerMainScript : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         isOnCooldown = false;
     }
-
-    /*private void ShootSound()
-    {
-        if (shootSound && shootSound.clip)
-        {
-            shootSound.Play();
-        }
-    }*/
-
 }

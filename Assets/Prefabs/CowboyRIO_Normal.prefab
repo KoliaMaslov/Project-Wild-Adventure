@@ -135,6 +135,7 @@ MonoBehaviour:
   controller: {fileID: 7582441573420540387}
   rb: {fileID: 7190666249482221227}
   jumpHeight: 1
+  player: {fileID: 8182362698136348467}
   basicPanel: {fileID: 0}
 --- !u!114 &8182362698136348467
 MonoBehaviour:

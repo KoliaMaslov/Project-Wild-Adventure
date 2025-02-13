@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BasicPanelControl : MonoBehaviour
 {
+    [Header("UI Elements")]
     public GameObject inventoryPanel;
     public GameObject horsePanel;
     public GameObject settingsPanel;
@@ -20,15 +21,15 @@ public class BasicPanelControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI staminaBar;
     [SerializeField] private TextMeshProUGUI hungerBar;
     [SerializeField] private GameObject aimImage;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
-
+    [Header("Other Scripts")]
+    [SerializeField] private SaveManager saveManager;
     [SerializeField] private PlayerMainScript mainPlayer;
     [SerializeField] private PlayerMovement playerMovement;
+
     [SerializeField] private GameObject playerObj;
     public GameObject temp;
-
-    public TextMeshProUGUI moneyText;
-    public int money;
     public int completedAchievements;
     private int achievementsToComplete = 1;
     private bool isMoneyAchievementComplete = false;
@@ -39,8 +40,6 @@ public class BasicPanelControl : MonoBehaviour
     void Start()
     {
         for (int c = 0; c < isCellOccupied.Length; c++) isCellOccupied[c] = false;
-        money = 1000;
-        moneyText.text = "Money: " + money.ToString();
         HealthTextUpdate(health);
         StaminaTextUpdate(stamina);
         HungerTextUpdate(hunger);
@@ -70,7 +69,7 @@ public class BasicPanelControl : MonoBehaviour
         {
             SwitchItemType(equippedItemType[2]);
         }
-        if (!isMoneyAchievementComplete && money >= 2000)
+        if (!isMoneyAchievementComplete && saveManager.money >= 2000)
         {
             isMoneyAchievementComplete = true;
             achievementBT.SetActive(true);
@@ -182,5 +181,10 @@ public class BasicPanelControl : MonoBehaviour
     public void HungerTextUpdate(int number)
     {
         hungerBar.text = number.ToString() + "%";
+    }
+
+    public void MoneyTextUpdate(int number)
+    {
+        moneyText.text = "Money: " + number.ToString();
     }
 }

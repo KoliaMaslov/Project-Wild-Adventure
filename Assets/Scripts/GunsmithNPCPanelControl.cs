@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GunsmithNPCPanelControl : MonoBehaviour
 {
+    [SerializeField] private SaveManager saveManager;
     [SerializeField] private InventoryControl inventory;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject interactText;
@@ -60,7 +61,11 @@ public class GunsmithNPCPanelControl : MonoBehaviour
     //buy first item
     public void OnFirstBTClick()
     {
-        firstButton.SetActive(false);
-        inventory.AddItem(firstItemType);
+        if (saveManager.money >= 500)
+        {
+            firstButton.SetActive(false);
+            inventory.AddItem(firstItemType);
+            saveManager.PayMoney(500);
+        }
     }
 }

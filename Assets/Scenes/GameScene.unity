@@ -6134,6 +6134,7 @@ MonoBehaviour:
   - 
   - 
   - 
+  isOccupied: 000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &257702716
 GameObject:
   m_ObjectHideFlags: 0
@@ -21233,6 +21234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicPanel: {fileID: 880993070}
+  inventory: {fileID: 256948410}
   money: 0
 --- !u!1 &881404361
 GameObject:

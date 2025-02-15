@@ -65,6 +65,7 @@ public class MiningNPCControl : MonoBehaviour
             firstButton.SetActive(false);
             inventory.AddItem(firstItemType);
             saveManager.PayMoney(500);
+            saveManager.SavePickaxe(firstItemType);
         }
     }
 }

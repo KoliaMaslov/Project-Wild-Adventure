@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class InventoryControl : MonoBehaviour
 {
+    [Header("InventorySprites")]
     public GameObject inventoryPanel;
     private Sprite currentItem;
     private string currentType;
     private int chosenItem;
-    
 
     [Header("ItemsSprites")]
     public Sprite pickaxe;
@@ -35,23 +36,17 @@ public class InventoryControl : MonoBehaviour
     [Header("BasicPanel")]
     [SerializeField] private BasicPanelControl basicPanel;
 
-    [Header("InventorySprites")]
+    [Header("InventoryItems")]
     [SerializeField] private TextMeshProUGUI itemsCount;
     [SerializeField] private Image[] images;
     public string[] itemsType = new string[30];
-    private bool[] isOccupied = new bool[30];
+    public bool[] isOccupied = new bool[30];
     private bool[] canBeEquipped = new bool[30];
     private bool[] isItemEquipped = new bool[30];
 
     void Start()
     {
-        for (int c = 0; c < isOccupied.Length; c++) isOccupied[c] = false;
-        for (int c = 0; c < canBeEquipped.Length; c++) canBeEquipped[c] = false;
-        for (int c = 0; c < isItemEquipped.Length; c++) isItemEquipped[c] = false;
-        for (int c = 0; c < itemsType.Length; c++) itemsType[c] = "Undetected";
-        //AddItem("Pickaxe");
-        //AddItem("Axe");
-        //AddItem("Gun");
+        
     }
 
     private void Update()
@@ -60,12 +55,22 @@ public class InventoryControl : MonoBehaviour
         UpdateItemsCount();
     }
 
+    public void InitializeInventory()
+    {
+        for (int c = 0; c < isOccupied.Length; c++) isOccupied[c] = false;
+        for (int c = 0; c < canBeEquipped.Length; c++) canBeEquipped[c] = false;
+        for (int c = 0; c < isItemEquipped.Length; c++) isItemEquipped[c] = false;
+        for (int c = 0; c < itemsType.Length; c++) itemsType[c] = "Undetected";
+    }
     private void UpdateItemsCount()
     {
         int count = 0;
         for (int i = 0; i < isOccupied.Length; i++)
         {
-            if (isOccupied[i]) count++;
+            if (isOccupied[i])
+            {
+                count++;
+            }
         }
         itemsCount.text = count + " / 30";
     }
@@ -124,12 +129,19 @@ public class InventoryControl : MonoBehaviour
                 currentItem = rawHam;
                 currentType = "RawHam";
                 break;
+            default:
+                currentItem = empty;
+                currentType = "Undetected";
+                break;
         }
         int i = 0;
         while (isOccupied[i] && i < isOccupied.Length) i++;
         images[i].sprite = currentItem;
         itemsType[i] = currentType;
-        isOccupied[i] = true;
+        if (itemsType[i] != "Undetected")
+        {
+            isOccupied[i] = true;
+        }
     }
 
     public void DeleteItemInInventory(int pos)

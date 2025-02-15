@@ -20,7 +20,6 @@ public class BuyerNPCScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F) && isInTrigger)
             {
-                Debug.Log("Sell Loot");
                 for (int i = 0; i < inventory.itemsType.Length; i++)
                 {
                     switch(inventory.itemsType[i])

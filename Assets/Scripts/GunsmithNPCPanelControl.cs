@@ -66,6 +66,7 @@ public class GunsmithNPCPanelControl : MonoBehaviour
             firstButton.SetActive(false);
             inventory.AddItem(firstItemType);
             saveManager.PayMoney(500);
+            saveManager.SaveGun(firstItemType);
         }
     }
 }

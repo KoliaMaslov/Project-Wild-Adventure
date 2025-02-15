@@ -22,7 +22,10 @@ public class InventoryControl : MonoBehaviour
     public Sprite silver;
     public Sprite gold;
     public Sprite rawSteak;
+    public Sprite steak;
     public Sprite rawHam;
+    public Sprite breadRoll;
+    public Sprite friedChicken;
     public Sprite empty;
 
     [Header("ChosenItem")]
@@ -32,6 +35,8 @@ public class InventoryControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sellPrice;
     [SerializeField] private GameObject equipBT;
     [SerializeField] private GameObject unequipBT;
+    [SerializeField] private GameObject consumeBT;
+    [SerializeField] private GameObject buttonBackground;
 
     [Header("BasicPanel")]
     [SerializeField] private BasicPanelControl basicPanel;
@@ -44,6 +49,10 @@ public class InventoryControl : MonoBehaviour
     private bool[] canBeEquipped = new bool[30];
     private bool[] isItemEquipped = new bool[30];
 
+    private int breadRollHungerRestoration = 10;
+    private int steakHungerRestoration = 20;
+    private int friedChickenHungerRestoration = 33;
+
     void Start()
     {
         
@@ -51,7 +60,7 @@ public class InventoryControl : MonoBehaviour
 
     private void Update()
     {
-        EquipItemBTState();
+        ItemActionBTState();
         UpdateItemsCount();
     }
 
@@ -125,9 +134,21 @@ public class InventoryControl : MonoBehaviour
                 currentItem = rawSteak;
                 currentType = "RawSteak";
                 break;
+            case "Steak":
+                currentItem = steak;
+                currentType = "Steak";
+                break;
             case "Raw Ham":
                 currentItem = rawHam;
                 currentType = "RawHam";
+                break;
+            case "Bread Roll":
+                currentItem = breadRoll;
+                currentType = "BreadRoll";
+                break;
+            case "Fried Chicken":
+                currentItem = friedChicken;
+                currentType = "FriedChicken";
                 break;
             default:
                 currentItem = empty;
@@ -149,6 +170,7 @@ public class InventoryControl : MonoBehaviour
         images[pos].sprite = empty;
         itemsType[pos] = "Undetected";
         isOccupied[pos] = false;
+        SetChosenItemToNone();
     }
 
     public void FirstButton()
@@ -371,16 +393,43 @@ public class InventoryControl : MonoBehaviour
                     itemType.text = "Loot / Coocking ingredient";
                     sellPrice.text = "Sell Price: 50";
                     break;
+                case "Steak":
+                    chosenItemSprite.sprite = steak;
+                    itemName.text = "Steak";
+                    itemType.text = "Food";
+                    sellPrice.text = "Restores 20% of hunger";
+                    break;
                 case "RawHam":
                     chosenItemSprite.sprite = rawHam;
                     itemName.text = "Raw Ham";
                     itemType.text = "Loot / Coocking ingredient";
                     sellPrice.text = "Sell Price: 100";
                     break;
+                case "BreadRoll":
+                    chosenItemSprite.sprite = breadRoll;
+                    itemName.text = "Bread Roll";
+                    itemType.text = "Food";
+                    sellPrice.text = "Restores 10% of hunger";
+                    break;
+                case "FriedChicken":
+                    chosenItemSprite.sprite = friedChicken;
+                    itemName.text = "Fried Chicken";
+                    itemType.text = "Food";
+                    sellPrice.text = "Restores 33% of hunger";
+                    break;
                 default:
                     break;
             }
         }
+        else if (!isOccupied[item] && itemsType[item] == "Undetected") SetChosenItemToNone();
+    }
+
+    private void SetChosenItemToNone()
+    {
+        chosenItemSprite.sprite = empty;
+        itemName.text = null;
+        itemType.text = null;
+        sellPrice.text = null;
     }
 
     public void EquipItem()
@@ -414,22 +463,71 @@ public class InventoryControl : MonoBehaviour
         }
     }
 
-    private void EquipItemBTState()
+    private void ItemActionBTState()
     {
-        if (chosenItemSprite != null && !isItemEquipped[chosenItem])
+        if (!isItemEquipped[chosenItem] && canBeEquipped[chosenItem])
         {
+            buttonBackground.SetActive(true);
             unequipBT.SetActive(false);
             equipBT.SetActive(true);
+            consumeBT.SetActive(false);
         }
-        else if (chosenItemSprite != null && isItemEquipped[chosenItem])
+        else if (isItemEquipped[chosenItem] && canBeEquipped[chosenItem])
         {
+            buttonBackground.SetActive(true);
             equipBT.SetActive(false);
             unequipBT.SetActive(true);
+            consumeBT.SetActive(false);
+        }
+        else if (itemsType[chosenItem] == "BreadRoll" || itemsType[chosenItem] == "Steak" || itemsType[chosenItem] == "FriedChicken")
+        {
+            buttonBackground.SetActive(true);
+            equipBT.SetActive(false);
+            unequipBT.SetActive(false);
+            consumeBT.SetActive(true);
         }
         else
         {
+            buttonBackground.SetActive(false);
             equipBT.SetActive(false);
             unequipBT.SetActive(false);
+            consumeBT.SetActive(false);
+        }
+    }
+
+    private void RestoreHunger(int ammount)
+    {
+        basicPanel.hunger += ammount;
+        basicPanel.HungerTextUpdate(basicPanel.hunger);
+    }
+
+    public void ConsumeItem()
+    {
+        switch (itemsType[chosenItem])
+        {
+            case "BreadRoll":
+                if (basicPanel.hunger <= 100 - breadRollHungerRestoration)
+                {
+                    RestoreHunger(breadRollHungerRestoration);
+                    DeleteItemInInventory(chosenItem);
+                }
+                break;
+            case "Steak":
+                if (basicPanel.hunger <= 100 - steakHungerRestoration)
+                {
+                    RestoreHunger(steakHungerRestoration);
+                    DeleteItemInInventory(chosenItem);
+                }
+                break;
+            case "FriedChicken":
+                if (basicPanel.hunger <= 100 - friedChickenHungerRestoration)
+                {
+                    RestoreHunger(friedChickenHungerRestoration);
+                    DeleteItemInInventory(chosenItem);
+                }
+                break;
+            default:
+                break;
         }
     }
 }

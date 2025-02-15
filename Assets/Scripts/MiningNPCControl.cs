@@ -37,7 +37,7 @@ public class MiningNPCControl : MonoBehaviour
         {
             isInTrigger = true;
             interactText.SetActive(true);
-            sellLootText.SetActive(true);
+            //sellLootText.SetActive(true);
         }
     }
 
@@ -47,7 +47,7 @@ public class MiningNPCControl : MonoBehaviour
         {
             isInTrigger = false;
             interactText.SetActive(false);
-            sellLootText.SetActive(false);
+            //sellLootText.SetActive(false);
         }
     }
 

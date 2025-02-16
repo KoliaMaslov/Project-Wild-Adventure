@@ -14,6 +14,7 @@ public class BasicPanelControl : MonoBehaviour
     public GameObject goalPanel;
     public GameObject achievementBT;
     public GameObject gameEndBadScenarionPanel;
+    public GameObject confirmActionsPanel;
     public int health;
     public int stamina;
     public int hunger;
@@ -24,12 +25,12 @@ public class BasicPanelControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
 
     [Header("Other Scripts")]
-    [SerializeField] private SaveManager saveManager;
-    [SerializeField] private PlayerMainScript mainPlayer;
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private SpawnMenu _spawnScript;
+    [SerializeField] private SaveManager _saveManager;
+    [SerializeField] private PlayerMainScript _mainPlayer;
+    [SerializeField] private PlayerMovement _playerMovement;
 
     [SerializeField] private GameObject playerObj;
-    public GameObject temp;
     public int completedAchievements;
     private int achievementsToComplete = 1;
     private bool isMoneyAchievementComplete = false;
@@ -47,16 +48,6 @@ public class BasicPanelControl : MonoBehaviour
 
     void Update()
     {
-        if (mainPlayer == null)
-        {
-            temp = GameObject.FindGameObjectWithTag("Player");
-            temp.TryGetComponent<PlayerMainScript>(out mainPlayer);
-        }
-        if (playerMovement == null)
-        {
-            temp = GameObject.FindGameObjectWithTag("Player");
-            temp.TryGetComponent<PlayerMovement>(out playerMovement);
-        }
         if (Input.GetKeyDown(KeyCode.Alpha1) && isCellOccupied[0])
         {
             SwitchItemType(equippedItemType[0]);
@@ -69,19 +60,44 @@ public class BasicPanelControl : MonoBehaviour
         {
             SwitchItemType(equippedItemType[2]);
         }
-        if (!isMoneyAchievementComplete && saveManager.money >= 2000)
+        if (Input.GetKeyDown(KeyCode.Escape)) confirmActionsPanel.SetActive(true);
+        if (!isMoneyAchievementComplete && _saveManager.money >= 2000)
         {
             isMoneyAchievementComplete = true;
             achievementBT.SetActive(true);
         }
         if (health <= 0)
         {
+            _mainPlayer.UnlockCursor();
             gameEndBadScenarionPanel.SetActive(true);
+            _spawnScript.isSpawned = false;
             Destroy(playerObj);
         }
-        if (playerObj == null) playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (mainPlayer.isGunEquipped) aimImage.SetActive(true);
-        else if (!mainPlayer.isGunEquipped) aimImage.SetActive(false);
+        if (_mainPlayer.isGunEquipped) aimImage.SetActive(true);
+        else if (!_mainPlayer.isGunEquipped) aimImage.SetActive(false);
+    }
+
+    public void InitializeMainPlayerScript(PlayerMainScript mainPlayer)
+    {
+        if (_mainPlayer == null)
+        {
+            _mainPlayer = mainPlayer;
+        }
+    }
+    public void InitializePlayerMovementScript(PlayerMovement playerMovement)
+    {
+        if (_playerMovement == null)
+        {
+            _playerMovement = playerMovement;
+        }
+    }
+
+    public void InitializePlayerObj(GameObject player)
+    {
+        if (playerObj == null)
+        {
+            playerObj = player;
+        }
     }
 
     //open inventory panel
@@ -131,13 +147,13 @@ public class BasicPanelControl : MonoBehaviour
         switch (type)
         {
             case "Pickaxe":
-                mainPlayer.TakePickaxe();
+                _mainPlayer.TakePickaxe();
                 break;
             case "Axe":
-                mainPlayer.TakeAxe();
+                _mainPlayer.TakeAxe();
                 break;
             case "Gun":
-                mainPlayer.TakeGun();
+                _mainPlayer.TakeGun();
                 break;
             default:
                 break;

@@ -8,17 +8,22 @@ using UnityEngine.Rendering;
 public class BearScript : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private BasicPanelControl basicPanel;
+    [SerializeField] private BasicPanelControl _basicPanel;
     [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private Animator animator;
     private float gravityCoef = -9.78f;
     private float walkSpeed = 2f;
-    private float runSpeed = 5f;
+    private float runSpeed = 8f;
     private float cooldown = 3f;
     public int health = 300;
     private int damage = 40;
-    private GameObject target;
     private bool isOnCooldown = false;
+    private GameObject target;
     private Transform spawnPos;
+
+    private string animationRunForwardState = "Run Forward";
+    private string animationIdleState = "Idle";
+    private string animationAttackState = "Attack1";
     void Start()
     {
         
@@ -30,29 +35,25 @@ public class BearScript : MonoBehaviour
         {
             spawnPos = GetComponentInParent<Transform>();
         }
-        /*isGrounded = characterController.isGrounded;
-        Vector3 movement = new Vector3(0, 0, 0);
-        if (!isGrounded)
-        {
-            movement.y += gravityCoef * Time.deltaTime;
-            movement = transform.TransformDirection(movement);
-            characterController.Move(movement);
-        }
-        if (target != null && isGrounded && Vector3.Distance(transform.position, target.transform.position) >= 5f)
-        {
-            transform.LookAt(target.transform);
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, walkSpeed * Time.deltaTime);
-        }
-        if (target != null && isGrounded && !isOnCooldown && Vector3.Distance(transform.position, target.transform.position) <= 5f) StartCoroutine(AttackPlayer(damage, cooldown));*/
         if (target)
         {
             Movement();
-            if (agent.remainingDistance <= 5f && target != null && !isOnCooldown) StartCoroutine(AttackPlayer(damage, cooldown));
+            if (agent.remainingDistance <= 5f && target != null && !isOnCooldown)
+            {
+                animator.SetBool(animationRunForwardState, false);
+                StartCoroutine(AttackPlayer(damage, cooldown));
+            }
         }
+        if (target == null) PlayIdleAnimation();
     }
 
     private void Movement()
     {
+        if (agent.remainingDistance > 6f)
+        {
+            PlayRunForwardAnimation();
+        }
+        if (agent.remainingDistance <= 6f) animator.SetBool(animationRunForwardState, false);
         agent.destination = target.transform.position;
         if (agent.remainingDistance > 5f) agent.speed = runSpeed;
         else if (agent.remainingDistance <= 5f) agent.speed = 0f;
@@ -71,16 +72,31 @@ public class BearScript : MonoBehaviour
         health -= damageTaken;
     }
 
+    private void PlayIdleAnimation()
+    {
+        animator.SetBool(animationRunForwardState, false);
+        animator.SetBool(animationIdleState, true);
+    }
+    
+    private void PlayRunForwardAnimation()
+    {
+        animator.SetBool(animationIdleState, false);
+        animator.SetBool(animationRunForwardState, true);
+    }
+
+    public void InitializeBasicPanelScript(BasicPanelControl basicPanel)
+    {
+        if (_basicPanel == null)
+        {
+            _basicPanel = basicPanel;
+        }
+    }
     IEnumerator AttackPlayer(int damage, float cooldown)
     {
-        if (basicPanel == null)
-        {
-            GameObject temp = GameObject.Find("BasicPanel (Panel)");
-            temp.TryGetComponent<BasicPanelControl>(out basicPanel);
-        }
+        animator.SetTrigger(animationAttackState);
         isOnCooldown = true;
-        basicPanel.health -= damage;
-        basicPanel.HealthTextUpdate(basicPanel.health);
+        _basicPanel.health -= damage;
+        _basicPanel.HealthTextUpdate(_basicPanel.health);
         yield return new WaitForSeconds(cooldown);
         isOnCooldown = false;
     }

@@ -10,6 +10,10 @@ public class SpawnMenu : MonoBehaviour
     public GameObject playerPrefab;
     public bool isSpawned = false;
     public Transform spawnPosition;
+    private GameObject playerClone;
+
+    [SerializeField] private BasicPanelControl _basicPanelScript;
+    [SerializeField] private CameraController _cameraController;
 
     void Start()
     {
@@ -20,8 +24,13 @@ public class SpawnMenu : MonoBehaviour
     {
         if (!isSpawned)
         {
-            Instantiate(playerPrefab, spawnPosition.position, Quaternion.identity);
+            playerClone = Instantiate(playerPrefab, spawnPosition.position, Quaternion.identity);
             isSpawned = true;
+            _basicPanelScript.InitializeMainPlayerScript(playerClone.gameObject.GetComponent<PlayerMainScript>());
+            _basicPanelScript.InitializePlayerMovementScript(playerClone.gameObject.GetComponent<PlayerMovement>());
+            _basicPanelScript.InitializePlayerObj(playerClone);
+            _cameraController.InitializeMainPlayerScript(playerClone.gameObject.GetComponent<PlayerMainScript>());
+            _cameraController.InitializePlayerObj(playerClone);
         }
         spawnPanel.SetActive(false);
         basicPanel.SetActive(true);

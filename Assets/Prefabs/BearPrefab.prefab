@@ -2215,6 +2215,8 @@ MonoBehaviour:
   characterController: {fileID: 4227796210754100530}
   basicPanel: {fileID: 0}
   agent: {fileID: -1777827958982036739}
+  animator: {fileID: 1659254505392665216}
+  health: 300
 --- !u!54 &8300330597227524431
 Rigidbody:
   m_ObjectHideFlags: 0

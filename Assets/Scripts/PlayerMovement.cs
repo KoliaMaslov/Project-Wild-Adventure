@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isPlayerGrounded;
     private bool isStaminaOnCooldown = false;
     private bool canRun = false;
-    private bool isRunning = false;
+    public bool isRunning = false;
+    public bool isWalking = false;
     private bool isHungerOnCooldown = false;
     private bool isJumpOnCooldown = false;
     [SerializeField] private PlayerMainScript player;
@@ -35,7 +34,18 @@ public class PlayerMovement : MonoBehaviour
         SpeedControl();
         StaminaControl();
         HungerControl();
-        if (player.isLocked) Movement();
+        if (player.isLocked)
+        {
+            Movement();
+        }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            isWalking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || !player.isLocked)
+        {
+            isWalking = false;
+        }
     }
 
     private void Movement()

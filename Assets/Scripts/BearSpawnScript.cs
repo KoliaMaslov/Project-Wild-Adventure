@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class BearSpawnScript : MonoBehaviour
 {
-    [SerializeField] private Transform spawnPoint;
+    public Transform spawnPoint;
     [SerializeField] private GameObject bearPrefab;
     [SerializeField] private BearScript bear;
     [SerializeField] private InventoryControl inventory;
+    [SerializeField] private BasicPanelControl basicPanel;
     private GameObject clone;
     private bool isOnCooldown = false;
     private bool isBearSpawned = false;
@@ -29,7 +30,9 @@ public class BearSpawnScript : MonoBehaviour
     {
         clone = Instantiate(bearPrefab, spawnPoint.position, Quaternion.identity);
         clone.transform.parent = spawnPoint.transform;
+        bear = clone.gameObject.GetComponent<BearScript>();
         isBearSpawned = true;
+        bear.InitializeBasicPanelScript(basicPanel);
     }
 
     private IEnumerator DieAndRespawn(float time)

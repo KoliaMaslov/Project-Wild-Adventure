@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 17234361}
   - component: {fileID: 17234363}
   - component: {fileID: 17234362}
+  - component: {fileID: 17234364}
   m_Layer: 5
   m_Name: ConfirmActions (Panel)
   m_TagString: Untagged
@@ -413,6 +414,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17234360}
   m_CullTransparentMesh: 1
+--- !u!114 &17234364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17234360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc7d507921e0874eb8e38a0e66df8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 17234360}
 --- !u!1 &20901418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1881,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94661114}
   m_CullTransparentMesh: 1
+--- !u!1 &96579797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96579798}
+  - component: {fileID: 96579799}
+  m_Layer: 0
+  m_Name: GoldOreSpawn (Empty) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96579798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96579797}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1926.04, y: 15.451, z: 1891.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880592288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96579799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96579797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e9be53b4e9fab4f87830570fcb242e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 96579798}
+  orePrefab: {fileID: 177466980226506250, guid: 07409a80d1f8d284fa95447005f3fc61,
+    type: 3}
+  inventory: {fileID: 256948410}
+  ore: {fileID: 0}
+  hits: 0
+  hitsNeededToDestroy: 0
+  currentOre: 
 --- !u!1 &102803105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,6 +3026,7 @@ MonoBehaviour:
     type: 3}
   bear: {fileID: 0}
   inventory: {fileID: 256948410}
+  basicPanel: {fileID: 880993070}
 --- !u!1 &135910828
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,6 +3491,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 525198221}
+        m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnFirstBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 318066479}
         m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
         m_MethodName: OnFirstBTClick
         m_Mode: 1
@@ -7649,6 +7728,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 442713257}
+        m_TargetAssemblyTypeName: MiningNPCControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &312206661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7762,6 +7853,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314253200}
   m_CullTransparentMesh: 1
+--- !u!114 &318066479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7536334924706494432, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4523671024042352004}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997e60e28e104284e8793aed2f8d1b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &318113653
 GameObject:
   m_ObjectHideFlags: 0
@@ -8074,7 +8177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Peacekeeper Rifle
+  m_text: Vinchester Rifle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10357,6 +10460,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438465792}
   m_CullTransparentMesh: 1
+--- !u!114 &442713257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+    type: 3}
+  m_PrefabInstance: {fileID: 3032847667353121560}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a34a98230ac9c742ab9b4c579e93f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444968104
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,6 +11465,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494232628}
   m_CullTransparentMesh: 1
+--- !u!1 &498820730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498820731}
+  - component: {fileID: 498820732}
+  m_Layer: 0
+  m_Name: SandstoneSpawn (Empty)  (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498820731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498820730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1913, y: 13.022, z: 1890.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880592288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498820732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498820730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e9be53b4e9fab4f87830570fcb242e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 498820731}
+  orePrefab: {fileID: 1063228012727564446, guid: 436a37710033d6049baca8dc109593fc,
+    type: 3}
+  inventory: {fileID: 256948410}
+  ore: {fileID: 0}
+  hits: 0
+  hitsNeededToDestroy: 0
+  currentOre: 
 --- !u!1 &500867347
 GameObject:
   m_ObjectHideFlags: 0
@@ -11909,7 +12076,9 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 1469930439}
   gameEndBSPanel: {fileID: 507732391}
-  basicPanel: {fileID: 880993070}
+  _basicPanel: {fileID: 880993070}
+  _spawnMenu: {fileID: 1915958528}
+  _cameraController: {fileID: 1134653909}
 --- !u!1 &520094041
 GameObject:
   m_ObjectHideFlags: 0
@@ -13347,6 +13516,18 @@ MonoBehaviour:
   hits: 0
   hitsNeededToDestroy: 0
   currentOre: 
+--- !u!114 &566653572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+    type: 3}
+  m_PrefabInstance: {fileID: 3639363902340326415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd12f122bdc0a140a7da3d83ec18544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &571726413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -741374678590358562, guid: 12c7de3c2032b2c4b88d200516220fb9,
@@ -14091,6 +14272,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596774692}
   m_CullTransparentMesh: 1
+--- !u!1 &599781992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599781993}
+  - component: {fileID: 599781994}
+  m_Layer: 0
+  m_Name: CopperOreSpawn (Empty) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &599781993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599781992}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1913.79, y: 13.884, z: 1887.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880592288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &599781994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599781992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e9be53b4e9fab4f87830570fcb242e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 599781993}
+  orePrefab: {fileID: 6949947327209303161, guid: 41f2a32f1af117d46840b3abe22be09d,
+    type: 3}
+  inventory: {fileID: 256948410}
+  ore: {fileID: 0}
+  hits: 0
+  hitsNeededToDestroy: 0
+  currentOre: 
 --- !u!1 &601518679
 GameObject:
   m_ObjectHideFlags: 0
@@ -19986,6 +20219,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837668318}
   m_CullTransparentMesh: 1
+--- !u!1 &843988097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843988098}
+  - component: {fileID: 843988099}
+  m_Layer: 0
+  m_Name: IronOreSpawn (Empty) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843988098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843988097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1913, y: 14.59, z: 1882.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880592288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &843988099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843988097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e9be53b4e9fab4f87830570fcb242e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 843988098}
+  orePrefab: {fileID: 1342943893065726747, guid: 66c5bb7bb43574a4b9fd85d8940230fb,
+    type: 3}
+  inventory: {fileID: 256948410}
+  ore: {fileID: 0}
+  hits: 0
+  hitsNeededToDestroy: 0
+  currentOre: 
 --- !u!1 &847740442
 GameObject:
   m_ObjectHideFlags: 0
@@ -20354,6 +20639,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 571726413}
+        m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnFirstBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 566653572}
         m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
         m_MethodName: OnFirstBTClick
         m_Mode: 1
@@ -20968,10 +21265,15 @@ Transform:
   - {fileID: 963860944}
   - {fileID: 1471553783}
   - {fileID: 1603506559}
+  - {fileID: 599781993}
   - {fileID: 1932097079}
+  - {fileID: 498820731}
   - {fileID: 564858786}
+  - {fileID: 843988098}
   - {fileID: 296674583}
+  - {fileID: 1860428943}
   - {fileID: 1869115347}
+  - {fileID: 96579798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880993066
@@ -21087,6 +21389,7 @@ MonoBehaviour:
   goalPanel: {fileID: 604335508}
   achievementBT: {fileID: 541490634}
   gameEndBadScenarionPanel: {fileID: 507732391}
+  confirmActionsPanel: {fileID: 17234360}
   health: 100
   stamina: 100
   hunger: 100
@@ -21095,12 +21398,11 @@ MonoBehaviour:
   hungerBar: {fileID: 500867349}
   aimImage: {fileID: 1914092001}
   moneyText: {fileID: 80915684}
-  saveManager: {fileID: 880993071}
-  mainPlayer: {fileID: 0}
-  playerMovement: {fileID: 4083896383874378064, guid: 7d6c0fa325c79d7448d0d3f2101511f4,
-    type: 3}
+  _spawnScript: {fileID: 1915958528}
+  _saveManager: {fileID: 880993071}
+  _mainPlayer: {fileID: 0}
+  _playerMovement: {fileID: 0}
   playerObj: {fileID: 0}
-  temp: {fileID: 0}
   completedAchievements: 0
   equippedItems:
   - {fileID: 235059497}
@@ -25753,8 +26055,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnMenu: {fileID: 1915958528}
-  playerScript: {fileID: 0}
-  player: {fileID: 0}
+  _playerScript: {fileID: 0}
+  playerObj: {fileID: 0}
 --- !u!114 &1134653910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25957,6 +26259,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 525198221}
+        m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnSecondBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 318066479}
         m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
         m_MethodName: OnSecondBTClick
         m_Mode: 1
@@ -27481,6 +27795,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 571726413}
+        m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 566653572}
         m_TargetAssemblyTypeName: GunsmithNPCPanelControl, Assembly-CSharp
         m_MethodName: OnCloseBTClick
         m_Mode: 1
@@ -32714,6 +33040,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 442713257}
+        m_TargetAssemblyTypeName: MiningNPCControl, Assembly-CSharp
+        m_MethodName: OnFirstBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433097901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33618,7 +33956,7 @@ Transform:
   m_GameObject: {fileID: 1471553782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 501, z: 8}
+  m_LocalPosition: {x: 1910, y: 13.644, z: 1885.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42080,7 +42418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1784935360}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17234364}
+        m_TargetAssemblyTypeName: ConfirmActionsPanelScript, Assembly-CSharp
+        m_MethodName: OnCancelBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1784935360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43435,6 +43785,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849531983}
   m_CullTransparentMesh: 1
+--- !u!1 &1860428942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860428943}
+  - component: {fileID: 1860428944}
+  m_Layer: 0
+  m_Name: SilverOreSpawn (Empty) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860428943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860428942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1918.48, y: 14.519, z: 1887}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 880592288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860428944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860428942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e9be53b4e9fab4f87830570fcb242e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1860428943}
+  orePrefab: {fileID: 1270194402842285211, guid: 208bcb48fcc7f0f46be71f2881d20f8d,
+    type: 3}
+  inventory: {fileID: 256948410}
+  ore: {fileID: 0}
+  hits: 0
+  hitsNeededToDestroy: 0
+  currentOre: 
 --- !u!1 &1865421671
 GameObject:
   m_ObjectHideFlags: 0
@@ -44003,6 +44405,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 318066479}
+        m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnThirdBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1879987525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44125,6 +44539,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 525198221}
+        m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
+        m_MethodName: OnCloseBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 318066479}
         m_TargetAssemblyTypeName: BarmenNPCPanelControl, Assembly-CSharp
         m_MethodName: OnCloseBTClick
         m_Mode: 1
@@ -44302,6 +44728,7 @@ MonoBehaviour:
     type: 3}
   bear: {fileID: 0}
   inventory: {fileID: 256948410}
+  basicPanel: {fileID: 880993070}
 --- !u!1 &1887899608
 GameObject:
   m_ObjectHideFlags: 0
@@ -45257,7 +45684,9 @@ MonoBehaviour:
   playerPrefab: {fileID: 7675776142550825914, guid: 7d6c0fa325c79d7448d0d3f2101511f4,
     type: 3}
   isSpawned: 0
-  spawnPosition: {fileID: 1469930439}
+  spawnPosition: {fileID: 831988423}
+  _basicPanelScript: {fileID: 880993070}
+  _cameraController: {fileID: 1134653909}
 --- !u!1 &1917481014
 GameObject:
   m_ObjectHideFlags: 0
@@ -46345,7 +46774,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1952825885}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17234364}
+        m_TargetAssemblyTypeName: ConfirmActionsPanelScript, Assembly-CSharp
+        m_MethodName: OnConfirmBTClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1952825885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50951,6 +51392,335 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144180828}
   m_CullTransparentMesh: 1
+--- !u!1001 &3032847667353121560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 256948410}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: shopPanel
+      value: 
+      objectReference: {fileID: 1548178331}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: fifthButton
+      value: 
+      objectReference: {fileID: 1588709014}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: firstButton
+      value: 
+      objectReference: {fileID: 1433097898}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: saveManager
+      value: 
+      objectReference: {fileID: 880993071}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: thirdButton
+      value: 
+      objectReference: {fileID: 771146534}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: fourthButton
+      value: 
+      objectReference: {fileID: 621336148}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: interactText
+      value: 
+      objectReference: {fileID: 450034732}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: secondButton
+      value: 
+      objectReference: {fileID: 798559932}
+    - target: {fileID: 3006925757394708705, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: sellLootText
+      value: 
+      objectReference: {fileID: 177299298}
+    - target: {fileID: 3089422786052502252, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_Name
+      value: MiningNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1889.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1968.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311034829788158436, guid: a36ee4a20ec45ce4eaf8d563d2eb6022,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a36ee4a20ec45ce4eaf8d563d2eb6022, type: 3}
+--- !u!1001 &3639363902340326415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 256948410}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: shopPanel
+      value: 
+      objectReference: {fileID: 1885113692}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: fifthButton
+      value: 
+      objectReference: {fileID: 290759045}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: firstButton
+      value: 
+      objectReference: {fileID: 862195291}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: saveManager
+      value: 
+      objectReference: {fileID: 880993071}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: thirdButton
+      value: 
+      objectReference: {fileID: 1844193932}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: fourthButton
+      value: 
+      objectReference: {fileID: 763400520}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: interactText
+      value: 
+      objectReference: {fileID: 450034732}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: secondButton
+      value: 
+      objectReference: {fileID: 520094041}
+    - target: {fileID: 1171309072904994671, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: sellLootText
+      value: 
+      objectReference: {fileID: 177299298}
+    - target: {fileID: 3922299351086116947, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_Name
+      value: GunsmithNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1895.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1975.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212332527243412160, guid: a1b1f380c456f85468cedfa86ec1d579,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a1b1f380c456f85468cedfa86ec1d579, type: 3}
+--- !u!1001 &4523671024042352004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1907.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.404
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1967.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727766672757513142, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536334924706494432, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 256948410}
+    - target: {fileID: 7536334924706494432, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: shopPanel
+      value: 
+      objectReference: {fileID: 1209294847}
+    - target: {fileID: 7536334924706494432, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: saveManager
+      value: 
+      objectReference: {fileID: 880993071}
+    - target: {fileID: 7536334924706494432, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: interactText
+      value: 
+      objectReference: {fileID: 450034732}
+    - target: {fileID: 7536334924706494432, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: sellLootText
+      value: 
+      objectReference: {fileID: 177299298}
+    - target: {fileID: 7610340078281855011, guid: 2c6222d8ea2f53d48bdf3f99c490215d,
+        type: 3}
+      propertyPath: m_Name
+      value: BarmanNPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c6222d8ea2f53d48bdf3f99c490215d, type: 3}
 --- !u!1001 &5894082272972497851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51012,7 +51782,7 @@ PrefabInstance:
     - target: {fileID: 810380045116921922, guid: 12c7de3c2032b2c4b88d200516220fb9,
         type: 3}
       propertyPath: m_Name
-      value: GunsmithNPC
+      value: GunsmithNPCPrototype
       objectReference: {fileID: 0}
     - target: {fileID: 892649129196328875, guid: 12c7de3c2032b2c4b88d200516220fb9,
         type: 3}
@@ -51180,7 +51950,7 @@ PrefabInstance:
     - target: {fileID: 5552146166378636218, guid: 3699f82b5a5dad3449b4cadc26b9ccc3,
         type: 3}
       propertyPath: m_Name
-      value: MiningNPC
+      value: MiningNPCPrototype
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51198,7 +51968,7 @@ PrefabInstance:
     - target: {fileID: 2461541567556847018, guid: 67205d80661bd40428cafab4b89ad3b3,
         type: 3}
       propertyPath: m_Name
-      value: BarmenNPC
+      value: BarmenNPCPrototype
       objectReference: {fileID: 0}
     - target: {fileID: 4126835384073108738, guid: 67205d80661bd40428cafab4b89ad3b3,
         type: 3}
@@ -51540,3 +52310,6 @@ SceneRoots:
   - {fileID: 1257488918}
   - {fileID: 279595696}
   - {fileID: 831988423}
+  - {fileID: 3032847667353121560}
+  - {fileID: 3639363902340326415}
+  - {fileID: 4523671024042352004}

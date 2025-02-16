@@ -3,7 +3,13 @@ guid: 8df954d92e54e6d40884e2c866df424c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnPoint: {instanceID: 0}
+  - bearPrefab: {fileID: 8915519364912543480, guid: 77e537d54e9b105448c18017a08f6fd2,
+      type: 3}
+  - bear: {instanceID: 0}
+  - inventory: {instanceID: 0}
+  - basicPanel: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

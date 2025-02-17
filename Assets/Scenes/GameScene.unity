@@ -45684,7 +45684,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 7675776142550825914, guid: 7d6c0fa325c79d7448d0d3f2101511f4,
     type: 3}
   isSpawned: 0
-  spawnPosition: {fileID: 831988423}
+  spawnPosition: {fileID: 1469930439}
   _basicPanelScript: {fileID: 880993070}
   _cameraController: {fileID: 1134653909}
 --- !u!1 &1917481014

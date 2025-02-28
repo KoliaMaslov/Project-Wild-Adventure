@@ -9,8 +9,11 @@ public class BearScript : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [SerializeField] private BasicPanelControl _basicPanel;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip roarSoundClip;
+    [SerializeField] private AudioClip deathSoundClip;
     private float gravityCoef = -9.78f;
     private float walkSpeed = 2f;
     private float runSpeed = 8f;
@@ -68,7 +71,7 @@ public class BearScript : MonoBehaviour
 
     public void ReactToHit(int damageTaken)
     {
-        Debug.Log("Hit");
+        MakeSound(roarSoundClip);
         health -= damageTaken;
     }
 
@@ -89,6 +92,15 @@ public class BearScript : MonoBehaviour
         if (_basicPanel == null)
         {
             _basicPanel = basicPanel;
+        }
+    }
+    
+    private void MakeSound(AudioClip audioClip)
+    {
+        if (audioSource && audioClip)
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
         }
     }
     IEnumerator AttackPlayer(int damage, float cooldown)

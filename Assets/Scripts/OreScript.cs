@@ -7,6 +7,8 @@ public class OreScript : MonoBehaviour
     public OreData data;
     public int hitsGot = 0;
     [SerializeField] private OreSpawnScript spawnpoint;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip pickaxeHitSound;
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class OreScript : MonoBehaviour
     void Update()
     {
         spawnpoint.hits = hitsGot;
-        
+        if (audioSource.clip == null) audioSource.clip = pickaxeHitSound;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -30,7 +32,7 @@ public class OreScript : MonoBehaviour
         if (other.CompareTag("Pickaxe"))
         {
             hitsGot++;
-            Debug.Log(hitsGot);
+            audioSource.Play();
         }
     }
 }

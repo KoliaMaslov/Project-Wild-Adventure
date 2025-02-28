@@ -14,12 +14,14 @@ public class SpawnMenu : MonoBehaviour
 
     [SerializeField] private BasicPanelControl _basicPanelScript;
     [SerializeField] private CameraController _cameraController;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip menuMusicClip;
 
     void Start()
     {
-        
+        audioSource.clip = menuMusicClip;
+        audioSource.Play();
     }
-
     public void OnSpawnBTClick()
     {
         if (!isSpawned)

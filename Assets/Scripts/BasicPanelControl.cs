@@ -30,6 +30,8 @@ public class BasicPanelControl : MonoBehaviour
     [SerializeField] private PlayerMainScript _mainPlayer;
     [SerializeField] private PlayerMovement _playerMovement;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip gameMusicClip;
     [SerializeField] private GameObject playerObj;
     public int completedAchievements;
     private int achievementsToComplete = 1;
@@ -44,6 +46,8 @@ public class BasicPanelControl : MonoBehaviour
         HealthTextUpdate(health);
         StaminaTextUpdate(stamina);
         HungerTextUpdate(hunger);
+        audioSource.clip = gameMusicClip;
+        audioSource.Play();
     }
 
     void Update()

@@ -5,6 +5,8 @@ public class PlayerAnimController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerMainScript playerMainScript;
     [SerializeField] private PlayerMovement playerMovement;
+    private string isWalkingState = "IsWalking";
+    private string isIdleState = "IsIdle";
     void Start()
     {
         if (playerMainScript == null) playerMainScript = gameObject.GetComponent<PlayerMainScript>();
@@ -13,7 +15,15 @@ public class PlayerAnimController : MonoBehaviour
 
     void Update()
     {
-        if (playerMovement.isWalking) animator.SetTrigger("IsWalking");
-        if (!playerMovement.isWalking) animator.SetTrigger("IsIdle");
+        if (playerMovement.isWalking)
+        {
+            animator.SetBool(isIdleState, false);
+            animator.SetBool(isWalkingState, true);
+        }
+        if (!playerMovement.isWalking)
+        {
+            animator.SetBool(isWalkingState, false);
+            animator.SetBool(isIdleState, true);
+        }
     }
 }

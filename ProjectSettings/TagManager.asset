@@ -18,6 +18,7 @@ TagManager:
   - Animal
   - GunPrototype
   - Gun
+  - Bear
   layers:
   - Default
   - TransparentFX

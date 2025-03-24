@@ -130,11 +130,14 @@ public class PlayerMainScript : MonoBehaviour
         ShotSound();
         if (Physics.Raycast(ray, out hit))
         {
-            GameObject hitObject = hit.transform.gameObject;
-            BearScript bear = hitObject.GetComponent<BearScript>();
-            if (bear != null)
+            if (hit.collider.gameObject.CompareTag("Bear"))
             {
-                bear.ReactToHit(gunDamage);
+                GameObject hitObject = hit.transform.gameObject;
+                BearScript bear = hitObject.GetComponent<BearScript>();
+                if (bear != null)
+                {
+                    bear.ReactToHit(gunDamage, gameObject);
+                }
             }
             else
             {

@@ -41,7 +41,7 @@ public class BearScript : MonoBehaviour
         if (target)
         {
             Movement();
-            if (agent.remainingDistance <= 5f && target != null && !isOnCooldown)
+            if (agent.remainingDistance <= 5f && agent.remainingDistance != 0 && !isOnCooldown)
             {
                 animator.SetBool(animationRunForwardState, false);
                 StartCoroutine(AttackPlayer(damage, cooldown));
@@ -52,12 +52,12 @@ public class BearScript : MonoBehaviour
 
     private void Movement()
     {
+        agent.destination = target.transform.position;
         if (agent.remainingDistance > 6f)
         {
             PlayRunForwardAnimation();
         }
         if (agent.remainingDistance <= 6f) animator.SetBool(animationRunForwardState, false);
-        agent.destination = target.transform.position;
         if (agent.remainingDistance > 5f) agent.speed = runSpeed;
         else if (agent.remainingDistance <= 5f) agent.speed = 0f;
     }
@@ -69,10 +69,21 @@ public class BearScript : MonoBehaviour
         }
     }
 
-    public void ReactToHit(int damageTaken)
+    public void ReactToHit(int damageTaken, GameObject target)
     {
+        TargetAtHit(target);
         MakeSound(roarSoundClip);
         health -= damageTaken;
+    }
+
+    public void ResetTarget()
+    {
+        target = null;
+    }
+
+    private void TargetAtHit(GameObject targetObject)
+    {
+        target = targetObject.gameObject;
     }
 
     private void PlayIdleAnimation()

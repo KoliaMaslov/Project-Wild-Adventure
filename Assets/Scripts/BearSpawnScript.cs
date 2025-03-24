@@ -38,6 +38,7 @@ public class BearSpawnScript : MonoBehaviour
     private IEnumerator DieAndRespawn(float time)
     {
         isOnCooldown = true;
+        bear.ResetTarget();
         Destroy(clone);
         inventory.AddItem("Raw Steak");
         inventory.AddItem("Raw Ham");

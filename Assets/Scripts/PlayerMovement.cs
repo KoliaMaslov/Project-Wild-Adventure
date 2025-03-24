@@ -90,12 +90,12 @@ public class PlayerMovement : MonoBehaviour
     private void StaminaControl()
     {
         if (isRunning && !isStaminaOnCooldown && basicPanel.stamina > 0) StartCoroutine(UseStamina(0.25f, 4));
-        if (!isRunning && !isStaminaOnCooldown && basicPanel.stamina < 100 && basicPanel.hunger > 0) StartCoroutine(RegenerateStamina(0.5f, 2));
+        if (!isRunning && !isStaminaOnCooldown && basicPanel.stamina < 100 && basicPanel.hunger > 0) StartCoroutine(RegenerateStamina(0.5f, 4));
     }
 
     private void HungerControl()
     {
-        if (!isRunning && !isHungerOnCooldown && basicPanel.hunger > 0 && basicPanel.stamina < 100) StartCoroutine(UseHunger(0.5f, 2));
+        if (!isRunning && !isHungerOnCooldown && basicPanel.hunger > 0 && basicPanel.stamina < 100) StartCoroutine(UseHunger(1f, 1));
     }
 
     private void Jump()

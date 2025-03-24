@@ -14,8 +14,8 @@ public class BearScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private AudioClip roarSoundClip;
     [SerializeField] private AudioClip deathSoundClip;
-    private float gravityCoef = -9.78f;
-    private float walkSpeed = 2f;
+    //private float gravityCoef = -9.78f;
+    //private float walkSpeed = 2f;
     private float runSpeed = 8f;
     private float cooldown = 3f;
     public int health = 300;

@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     private float xRotation = 0f;
     private float yRotation = 0f;
-    private Vector3 respawnRotation = new Vector3 (20f, 0f, 0f);
+    private Vector3 respawnRotation = new Vector3 (0f, -60f, 0f);
     void Start()
     {
 
@@ -24,8 +24,8 @@ public class CameraController : MonoBehaviour
         if (spawnMenu.isSpawned)
         {
         
-            if (_playerScript.isGunEquipped) distanceFromPlayer = 0f;
-            if (!_playerScript.isGunEquipped) distanceFromPlayer = 5f;
+            if ((_playerScript.isGunEquipped && !_playerScript.isPickaxeEquipped) || (_playerScript.isPickaxeEquipped && !_playerScript.isGunEquipped)) distanceFromPlayer = 0f;
+            if (!_playerScript.isGunEquipped && !_playerScript.isPickaxeEquipped) distanceFromPlayer = 5f;
         
             if (_playerScript.isLocked)
             {
@@ -81,6 +81,12 @@ public class CameraController : MonoBehaviour
         {
             playerObj = player;
         }
+    }
+
+    public void ResetXYRotation()
+    {
+        xRotation = 0;
+        yRotation = 0;
     }
 }
 

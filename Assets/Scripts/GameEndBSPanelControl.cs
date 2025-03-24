@@ -9,15 +9,6 @@ public class GameEndBSPanelControl : MonoBehaviour
     [SerializeField] private SpawnMenu _spawnMenu;
     [SerializeField] private CameraController _cameraController;
     private GameObject playerClone;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void OnRespawnBTClick()
     {
@@ -30,9 +21,14 @@ public class GameEndBSPanelControl : MonoBehaviour
             _basicPanel.InitializePlayerObj(playerClone);
             _cameraController.InitializeMainPlayerScript(playerClone.gameObject.GetComponent<PlayerMainScript>());
             _cameraController.InitializePlayerObj(playerClone);
+            _cameraController.ResetXYRotation();
         }
         _basicPanel.health = 100;
         _basicPanel.HealthTextUpdate(_basicPanel.health);
+        _basicPanel.stamina = 100;
+        _basicPanel.StaminaTextUpdate(_basicPanel.stamina);
+        _basicPanel.hunger = 100;
+        _basicPanel.HealthTextUpdate(_basicPanel.hunger);
         gameEndBSPanel.SetActive(false);
     }
 }

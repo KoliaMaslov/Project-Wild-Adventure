@@ -47,7 +47,7 @@ public class BasicPanelControl : MonoBehaviour
         StaminaTextUpdate(stamina);
         HungerTextUpdate(hunger);
         audioSource.clip = gameMusicClip;
-        audioSource.Play();
+        PlayMusic();
     }
 
     void Update()
@@ -206,5 +206,15 @@ public class BasicPanelControl : MonoBehaviour
     public void MoneyTextUpdate(int number)
     {
         moneyText.text = "Money: " + number.ToString();
+    }
+
+    public void PlayMusic()
+    {
+        audioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        audioSource.Stop();
     }
 }

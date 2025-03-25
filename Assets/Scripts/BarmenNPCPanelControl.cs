@@ -12,11 +12,9 @@ public class BarmenNPCPanelControl : MonoBehaviour
     private int breadRollPrice = 10;
     private int steakPrice = 50;
     private int friedChickenPrice = 100;
+    private float cooldown = 0.5f;
     private bool isInTrigger = false;
-    void Start()
-    {
-
-    }
+    private bool isOnCooldown = false;
 
     void Update()
     {
@@ -57,8 +55,9 @@ public class BarmenNPCPanelControl : MonoBehaviour
 
     public void OnFirstBTClick()
     {
-        if (saveManager.money >= breadRollPrice)
+        if (saveManager.money >= breadRollPrice && !isOnCooldown)
         {
+            StartCoroutine(BuyingCooldown(cooldown));
             inventory.AddItem("Bread Roll");
             saveManager.PayMoney(breadRollPrice);
         }
@@ -66,8 +65,9 @@ public class BarmenNPCPanelControl : MonoBehaviour
 
     public void OnSecondBTClick()
     {
-        if (saveManager.money >= steakPrice)
+        if (saveManager.money >= steakPrice && !isOnCooldown)
         {
+            StartCoroutine(BuyingCooldown(cooldown));
             inventory.AddItem("Steak");
             saveManager.PayMoney(steakPrice);
         }
@@ -75,10 +75,18 @@ public class BarmenNPCPanelControl : MonoBehaviour
 
     public void OnThirdBTClick()
     {
-        if (saveManager.money >= friedChickenPrice)
+        if (saveManager.money >= friedChickenPrice && !isOnCooldown)
         {
+            StartCoroutine(BuyingCooldown(cooldown));
             inventory.AddItem("Fried Chicken");
             saveManager.PayMoney(friedChickenPrice);
         }
+    }
+
+    private IEnumerator BuyingCooldown(float time)
+    {
+        isOnCooldown = true;
+        yield return new WaitForSeconds(time);
+        isOnCooldown = false;
     }
 }

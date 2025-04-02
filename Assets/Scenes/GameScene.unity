@@ -23883,6 +23883,7 @@ MonoBehaviour:
   _saveManager: {fileID: 880993071}
   _mainPlayer: {fileID: 0}
   _playerMovement: {fileID: 0}
+  _audioListener: {fileID: 0}
   audioSource: {fileID: 880993072}
   gameMusicClip: {fileID: 8300000, guid: 3ce26cd7b5616834f861b01c6132f880, type: 3}
   playerObj: {fileID: 0}
@@ -50754,7 +50755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1915958525
 RectTransform:
   m_ObjectHideFlags: 0

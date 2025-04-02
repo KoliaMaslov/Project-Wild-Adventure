@@ -30,6 +30,7 @@ public class BasicPanelControl : MonoBehaviour
     [SerializeField] private PlayerMainScript _mainPlayer;
     [SerializeField] private PlayerMovement _playerMovement;
 
+    [SerializeField] private AudioListener _audioListener;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip gameMusicClip;
     [SerializeField] private GameObject playerObj;
@@ -72,6 +73,7 @@ public class BasicPanelControl : MonoBehaviour
         }
         if (health <= 0)
         {
+            _mainPlayer.MakeHandsFree();
             _mainPlayer.UnlockCursor();
             gameEndBadScenarionPanel.SetActive(true);
             _spawnScript.isSpawned = false;

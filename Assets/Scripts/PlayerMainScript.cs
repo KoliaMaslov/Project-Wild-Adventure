@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMainScript : MonoBehaviour
 {
+    [SerializeField] private GameObject mainCamera;
     [SerializeField] private Camera camera;
     [SerializeField] private AudioSource shotSound;
     public bool isLocked = true;
@@ -25,12 +26,16 @@ public class PlayerMainScript : MonoBehaviour
     {
         LockCursor();
         itemHolder = player.transform.Find("ItemHolder");
-        var temp = GameObject.FindWithTag("MainCamera");
-        temp.TryGetComponent<Camera>(out camera);
+
     }
 
     void Update()
     {
+        if (mainCamera == null)
+        {
+            mainCamera = GameObject.FindWithTag("MainCamera");
+            mainCamera.TryGetComponent<Camera>(out camera);
+        }
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             if (isLocked)
@@ -74,6 +79,7 @@ public class PlayerMainScript : MonoBehaviour
             else if (isPickaxeEquipped)
             {
                 Destroy(pickaxe);
+                mainCamera.transform.parent = null;
                 isHandfree = true;
                 isPickaxeEquipped = false;
             }
@@ -95,6 +101,7 @@ public class PlayerMainScript : MonoBehaviour
             else if (isAxeEquipped)
             {
                 Destroy(axe);
+                mainCamera.transform.parent = null;
                 isHandfree = true;
                 isAxeEquipped = false;
             }
@@ -116,6 +123,7 @@ public class PlayerMainScript : MonoBehaviour
             else if (isGunEquipped)
             {
                 Destroy(gun);
+                mainCamera.transform.parent = null;
                 isHandfree = true;
                 isGunEquipped = false;
             }
@@ -139,10 +147,6 @@ public class PlayerMainScript : MonoBehaviour
                     bear.ReactToHit(gunDamage, gameObject);
                 }
             }
-            else
-            {
-                StartCoroutine(SphereIndicator(hit.point));
-            }
             StartCoroutine(ShootCooldown(cooldown));
         }
     }
@@ -152,18 +156,26 @@ public class PlayerMainScript : MonoBehaviour
         if(shotSound && shotSound.clip) shotSound.Play();
     }
 
-    private IEnumerator SphereIndicator(Vector3 pos)
-    {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.position = pos;
-        yield return new WaitForSeconds(3);
-        Destroy(sphere);
-    }
-
     private IEnumerator ShootCooldown(float cooldown)
     {
         isOnCooldown = true;
         yield return new WaitForSeconds(cooldown);
         isOnCooldown = false;
+    }
+
+    public void MakeHandsFree()
+    {
+        if (isGunEquipped)
+        {
+            Destroy(gun);
+            mainCamera.transform.parent = null;
+            isGunEquipped = false;
+        }
+        if (isPickaxeEquipped)
+        {
+            Destroy(pickaxe);
+            mainCamera.transform.parent = null;
+            isPickaxeEquipped = false;
+        }
     }
 }

@@ -22,15 +22,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (controller == null) GetComponent<CharacterController>();
         if (rb == null) GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
         if (basicPanel == null)
         {
             GameObject temp = GameObject.Find("BasicPanel (Panel)");
             temp.TryGetComponent<BasicPanelControl>(out basicPanel);
         }
-    }
-
-    void Update()
-    {
         SpeedControl();
         StaminaControl();
         HungerControl();
